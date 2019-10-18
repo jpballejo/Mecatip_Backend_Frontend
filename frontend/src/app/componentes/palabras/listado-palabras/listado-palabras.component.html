@@ -1,0 +1,27 @@
+<form #listarPalabrasForm="ngForm">
+  <div class="form-group form-inline">
+    Ingrese palabra o frase: <input class="" type="text" />
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Palabra O Frase</th>
+    <th scope="col">Significado</th>
+    <th scope="col">Nivel</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let palabras of palabra$ | async; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+
+          <p [result]="palabra.palabra_frase" [term]="filter.value"></p>
+        </td>
+        <td><ngb-highlight [result]="palabra.significado | number" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="palabra.nivel | number" [term]="filter.value"></ngb-highlight></td>
+      </tr>
+  </tbody>
+</table>

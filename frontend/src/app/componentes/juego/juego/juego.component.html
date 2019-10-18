@@ -1,0 +1,108 @@
+<body class="text-white ">
+        <header class="text-center p-3 mb-5">
+            <h1><strong>
+                {{ title }}!
+              </strong>
+            </h1>
+        </header>
+        <div class="container text-center">
+
+          <!-- Palabra & Input -->
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <p class="lead">Escribe la Siguiente Palabra en
+                <span class="text-success" id="seconds">{{tiempoLimite}}</span> Segundos:</p>
+              <h2 class="display-2 mb-5" id="current-word">{{palabraActual}}</h2>
+
+              <input id="inputPal" [disabled]="inputPalabra" [value]=" usuarioInput" (keyup)="checkeaPalabra($event, $event.target.value, index)" type="text"
+                class="form-control form-control-lg" placeholder="Empieza a escribir..." [(ngModel)]="inputPalabraValue" autofocus>
+
+              <h4 class="mt-3" id="message"></h4>
+
+              <!-- Tiempo & Puntuaciones -->
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <h3>Tiempo:
+                    <span id="time">{{tiempoTranscurrido}} segundos</span>
+                  </h3>
+                </div>
+                <div class="col-md-6">
+                  <h3>Puntuación:
+                    <span id="score">{{palAcertadas}}</span>
+                  </h3>
+                </div>
+
+                <div class="container text-center">
+
+
+
+                    <div *ngIf="mensajeError!=''" class="alert alert-primary">
+
+                      Escribiste mal la letra: <strong>{{mensajeError}}</strong>
+                    </div>
+
+                    <div class="results">
+                        <div>
+                            <span> Cantidad de Palabras: {{palabras.length}}</span>
+                        </div>
+
+                        <div>
+                            <span> Posibles Errores: {{posiblesErrores}}</span>
+                        </div>
+
+                        <div>
+                            <span> Letras Correctas: {{correctas}}</span>
+                        </div>
+
+                        <div>
+                            <span> Errores Ortográficos: {{errores}}</span>
+                        </div>
+
+                        <div>
+                            <span> Tiempo Restante: - segundos (para el caso de contrareloj) </span>
+                        </div>
+
+                        <div>
+                            <span> Palabras Correctas: {{palAcertadas}} / {{palabras.length}} </span>
+                        </div>
+
+                        <div>
+                            <span> Palabras por Minuto: {{PPM}}</span>
+                        </div>
+
+                        <div>
+                            <span> Progreso: {{progreso}} %</span>
+                        </div>
+
+                        <div>
+                          <span> Precisión: {{precision}} %</span>
+                      </div>
+
+                      <br>
+                      <div class="progress">
+                          <div id="barraProgreso" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0.1%"></div>
+                      </div>
+
+
+                    </div>
+
+              </div>
+
+
+
+              <!-- Instrucciones -->
+              <div class="row mt-5">
+                <div class="col-md-12">
+
+                  <div class="card card-body bg-secondary text-dark">
+                    <h5>Instrucciones</h5>
+                    <p>Escribe cada palabra dada en el campo indicado,
+                      sin errores, en el menor tiempo posible. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </body>
