@@ -17,10 +17,5 @@ export class ChatComponent implements OnInit {
   constructor() {
 
   }
-  getMessages() {
 
-  };
-
-
-  sendMessage(msg: string) {};
 }

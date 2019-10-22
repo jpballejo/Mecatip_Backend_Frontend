@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginaInicioComponent } from 'src/app/componentes/pagina-inicio/pagina-inicio.component';
 import { NotFoundPageComponent } from 'src/app/componentes/not-found-page/not-found-page.component';
-import { ChatComponent } from 'src/app/componentes/chat/chat.component';
+//import { ChatComponent } from 'src/app/componentes/chat/chat.component';
 
 
 

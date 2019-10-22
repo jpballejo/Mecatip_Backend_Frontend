@@ -1,16 +1,13 @@
-module.exports = (server, cookieParser, passport) => {
+module.exports = (io,jwtSecret) => {
   var ExtractJwt = require('passport-jwt').ExtractJwt,
-    passportJwtSocketIo = require('passport-jwt.socketio'),
-    jwtSecret = require('../passport/jwtConfig');
-  var io = require('socket.io')(server);
+    passportJwtSocketIo = require('passport-jwt.socketio');
+
   var Usuario = require('../models/usuario.modelo');
+
   const options = {
     jwtFromRequest: ExtractJwt.fromUrlQueryParameter('token'),
     secretOrKey: jwtSecret.secret
   }
-  var usuarios = [];
-  var salas = [];
-  var socket = null;
 
   function verify(jwtPayload, done) {
     // token is valid
@@ -18,8 +15,8 @@ module.exports = (server, cookieParser, passport) => {
     Usuario.findOne({
       username: jwtPayload.username
     }, (err, user) => {
-      console.log('Error: ',err);
-      console.log('user: ',user);
+      console.log('Error: ', err);
+      console.log('user: ', user);
       if(err) done(err, false);
       if(user) {
         done(null, user);
@@ -29,5 +26,7 @@ module.exports = (server, cookieParser, passport) => {
     });
     // the user passed is set to socket.request.user
   }
+
   io.use(passportJwtSocketIo.authorize(options, verify));
+
 };

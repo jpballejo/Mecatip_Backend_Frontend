@@ -15,13 +15,13 @@ var express = require('express'),
   utilidades = require('../utilidades/util'),
   headers = require('./headers');
 var appManager = require('../appManager');
-var socketController = require('../controllers/socket.controller');
+var socketManager = require('../socket/socketManager');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 app.use(cors());
 appManager(app, cookieParser,  passport, headers, express, path, flash);
-socketController(server,cookieParser,passport);
+socketManager(server);
 /**
  * Listen on provided port, on all network interfaces.
  */

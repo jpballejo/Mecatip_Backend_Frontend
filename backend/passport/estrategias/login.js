@@ -29,7 +29,7 @@ module.exports = function(passport) {
         });
       }
       // si exite el usuario pero es incorrecto el password
-      if(!user.authenticar(password)) {
+      if(!user.authenticar(String(password))) {
         console.log('Password incorrecto.');
         return done(null, false, {
           message: 'Password incorrecto.'

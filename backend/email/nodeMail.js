@@ -48,19 +48,3 @@ exports.getMailOptions = () => {mailOptions = {
   subject: 'Message',
   text: ''
 }};
-
-/*
-var mailOP = {
-  from: "jballejo@gmail.com",
-  to: "jball.ejo@gmail.com",
-  subject: "Reset Password",
-  text: "Su contraseña autogenerada: ",
-};
-//console.log(mailOP);
-transporter.sendMail(mailOP, (err, res) => {
-  if(err) {
-    return console.log(err);
-  } else {
-    return  console.log(res);
-  }
-});*/
