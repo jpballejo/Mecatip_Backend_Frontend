@@ -1,10 +1,15 @@
 console.log('Socket-salas cargado...');
 exports.funcionInit = () => console.log('socket-salas inicio');
 salas = [];
-validaArray = (array) => array.length > -1;
+validaArray = (array) => {
+  if(array != null) {
+    return array.length > -1;
+  }
+  return false;
+}
 ////////////////////////////////////////////////////////////////////////////
 exports.agregarSala = (sala, clientes, tipo, creador) => {
-  if(!salas[`${sala}`]) {
+  if(!this.salas[`${sala}`]) {
     var salaNueva = {}
     if(validaArray(clientes)) {
       salaNueva = {
@@ -21,7 +26,7 @@ exports.agregarSala = (sala, clientes, tipo, creador) => {
         tipo: tipo
       };
     }
-    salas[`${sala}`] = salaNueva;
+    this.salas[`${sala}`] = salaNueva;
     console.log('Agrege sala: ', sala);
     return salaNueva;
   } else {
@@ -31,10 +36,10 @@ exports.agregarSala = (sala, clientes, tipo, creador) => {
 };
 /////////////////////////////////////////////////////////////////////////
 exports.agregarASala = (sala, cliente) => {
-  if(salas[`${sala}`]) {
-    if(!salas[`${sala}`].clientes[`${cliente.usuario.username}`]) {
+  if(this.salas[`${sala}`]) {
+    if(!this.salas[`${sala}`].clientes[`${cliente.usuario.username}`]) {
       console.log('Agrege a sala: ', sala);
-      salas[`${sala}`].clientes[`${cliente.usuario.username}`] = cliente;
+      this.salas[`${sala}`].clientes[`${cliente.usuario.username}`] = cliente;
       return true;
     }
   }
@@ -42,11 +47,15 @@ exports.agregarASala = (sala, cliente) => {
 }
 /////////////////////////////////////////////////////////////////////////
 exports.eliminarSala = (sala) => {
-  if(salas[`${sala}`]) {
-    index = salas.indexOf(sala);
+  if(this.salas[`${sala}`]) {
+    this.salas[`${sala}`].clientes.forEach((cli) => {
+      cli.socketClient.leave(sala);
+      console.log('Desconecte de sala: ', cli.socketClient.id);
+    });
+    index = this.salas.indexOf(sala);
     console.log('Econtre sala: ', sala, ' en el index: ', index);
-    if(indez > -1) {
-      salas.splice(index, 1);
+    if(index > -1) {
+      this.salas.splice(index, 1);
       console.log('Elimine la sala en el index: ', index);
       return true;
     }
@@ -55,14 +64,14 @@ exports.eliminarSala = (sala) => {
 }
 /////////////////////////////////////////////////////////////////////////
 exports.getClientesSala = (sala) => {
-  if(salas[`${sala}`] && salas[`${sala}`].clientes) {
+  if(this.salas[`${sala}`] && salas[`${sala}`].clientes) {
     console.log('Encontre sala: ', sala, ' clientes en sala: ', salas[`${sala}`].clientes);
-    return salas[`${sala}`].clientes;
+    return this.salas[`${sala}`].clientes;
   } else return;
 }
 /////////////////////////////////////////////////////////////////////////
 exports.getCLienteEnSala = (username) => {
-  salas.forEach((salas) => {
+  this.salas.forEach((salas) => {
     if(salas.clientes[`${username}`]) {
       console.log('Encontre sala: ', sala, ' cliente en sala: ', salas.clientes[`${username}`]);
       return salas.clientes[`${username}`];
@@ -71,12 +80,14 @@ exports.getCLienteEnSala = (username) => {
 }
 /////////////////////////////////////////////////////////////////////////
 exports.sacarDeSala = (username) => {
-  return salas.forEach((salas) => {
+  return this.salas.forEach((salas) => {
     if(salas.clientes[`${username}`]) {
+      salas.clientes[`${username}`].socketClient.leave(salas.sala);
+      console.log('Desconecte cliente: ', username);
       index = salas.clientes.indexOf(`${username}`);
       return salas.clientes.splice(index, 1);
     }
   });
 }
 /////////////////////////////////////////////////////////////////////////
-exports.getSala = (sala) => salas[`${sala}`];
+exports.getSala = (sala) => this.salas[`${sala}`];

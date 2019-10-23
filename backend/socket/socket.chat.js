@@ -1,24 +1,101 @@
-module.exports = (chat, enEspera, socketClientes, socketSalas) => {
-  chat.on('msgnew', (msg, socket) => {
-    chat.emit('msg', {
-      emisor: socket.decoded_token.username,
-      mensaje: msg
-    });
+module.exports = (chat, socketEnEsperaChat, socketClientes, socketSalas) => {
+  var utilidades = require('../utilidades/util');
+  salasChat = [];
+  var notificarSalaDeChat = (usuarios, userAuspiciante) => {}
+  usuarios.forEach((user) => {
+    this.socketEnEsperaChat.getClienteUsername(user).socketClient.emit('invChat', userAuspiciante);
   });
-  chat.on('typing', (socket) => {
-    chat.broadcast.emit('typing', {
-      username: socket.decoded_token.username
+  var crearSala = (userCreador) => {
+    var idSala = utilidades.generarID('Chat');
+    this.socketSalas.agregarSala(idSala, null, 'CHAT', userCreador);
+    this.conectarASala(userCreador, sala);
+    this.guardarSala(idSala, userCreador);
+  }
+  var conectarASala = (user, sala) => {
+    this.socketClient.getClienteUsername(user).socketClient.join(sala, () => {
+      chat.to(sala).emit('seConecto', user);
     });
+  }
+  var guardarSala = (idSala, userAuspiciante) => {
+    if(!this.salasChat[idSala]) {
+      this.salasChat[idSala] = {
+        sala: idSala,
+        creador: userAuspiciante
+      }
+    }
+  };
+  var getSala = (userCreador) => {
+    return this.salasChat.forEach((sala) => {
+      if(sala.creador == userCreador) return sala.sala;
+    })
+  }
+  var existeSala = (sala) => this.salasChat[sala];
+  var getCreador = (idSala) => this.salasChat[idSala].creador;
+  //***************************************************************************//
+  chat.on('msgnew', (msg, sala, socket) => {
+    if(sala == 'GENERAL') {
+      chat.emit('msg', {
+        emisor: socket.decoded_token.username,
+        mensaje: msg
+      });
+    }
+    if(existeSala(sala)) {
+      chat.to(sala).emit('msg', {
+        emisor: socket.decoded_token.username,
+        mensaje: msg
+      });
+    }
+  });
+  chat.on('typing', (socket, sala) => {
+    if(sala == 'GENERAL') {
+      chat.broadcast.emit('typing', {
+        username: socket.decoded_token.username
+      });
+    }
+    if(existeSala(sala)) {
+      chat.to(sala).emit('typing', {
+        username: socket.decoded_token.username
+      });
+    }
   });
   // when the client emits 'stop typing', we broadcast it to others
   chat.on('stop typing', (socket) => {
-    chat.broadcast.emit('stop typing', {
-      username: socket.decoded_token.username
-    });
+    if(sala == 'GENERAL') {
+      chat.broadcast.emit('stop typing', {
+        username: socket.decoded_token.username
+      });
+    }
+    if(existeSala(sala)) {
+      chat.to(sala).emit('stop typing', {
+        username: socket.decoded_token.username
+      });
+    }
   });
-  chat.on('crearSala', (usuarios, socket) => {
-    clientesSocket = socketClientes.armarClientesPartida(usuarios);
-    enEspera.ponerEnEspera(socket.decoded_token.username, usuarios);
-    notificarSalaDeChat(usuarios, socket);
-  })
+  chat.on('invitarSala', (usuarios, socket) => {
+    this.socketEnEsperaChat.agregarAEspera(socket.decoded_token.username, usuarios);
+    this.notificarSalaDeChat(usuarios, socket.decoded_token.username);
+    this.crearSala(socket.decoded_token.username);
+  });
+  chat.on('aceptoChat', (socket, userAuspiciante) => {
+    userResp = socket.decoded_token.username;
+    if(this.socketEnEsperaChat.verificarEspera(userAuspiciante, userResp)) {
+      this.socketEnEsperaChat.sacarDeEspera(userAuspiciante, userResp);
+      var c = this.socketClient.getClienteUsername(userResp);
+      var sala = this.getSala(userAuspiciante);
+      this.socketSalas.agregarASala(sala, c);
+      this.conectarASala(userResp, sala);
+    }
+  });
+  chat.on('rechazoChat', (socket, userAuspiciante) => {
+    userResp = socket.decoded_token.username;
+    if(this.socketEnEsperaChat.verificarEspera(userAuspiciante, userResp)) {
+      this.socketEnEsperaChat.sacarDeEspera(userAuspiciante, userResp);
+      console.log('Rechazo chat: ', userResp);
+    }
+  });
+  chat.on('limpiarSala', (socket, idSala) => {
+    if(this.salasChat[`${idSala}`]) {
+      this.socketSalas.eliminarSala(idSala);
+    }
+  });
 }

@@ -40,7 +40,7 @@ var buscarPartida = (idPartida) => Partida.findOne({
 ////////////////////////////////////PARTIDA//////////////////////
 ////////////////////////////////////////////***altaPartida***//////////////////////////////////////////////////////
 exports.altaPartida = (req, res, next) => {
-  var idAuto = utilidades.generatePID();
+  var idAuto = utilidades.generateID();
   var idPartida = 'Partida:_',
     idAuto;
   var partidaNew = new Partida({
@@ -51,7 +51,7 @@ exports.altaPartida = (req, res, next) => {
     if(err) return next(err);
     if(partida) {
       //  res.status(200);
-      retun res.json({
+      return res.json({
         'idPartida': partidaNew.idPartida
       });
     }
@@ -61,7 +61,7 @@ exports.altaPartida = (req, res, next) => {
 ////////////////////////////////////////////***borrarPartidaById***//////////////////////////////////////////////////////
 exports.borrarPartidaById = (req, res, next) => {
   var query = {
-    idPartida: req.idPartida
+    idPartida: req.body.idPartida
   };
   Partida.where(query).update({
     isOcultar: true
@@ -118,10 +118,8 @@ exports.getPartidas = (req, res, next) => {
 ////////////////////////////////INFOPARTIDA//////////////////////
 ////////////////////////////////////////////***crearInfoPartida***//////////////////////////////////////////////////////
 exports.crearInfoPartida = (req, res, next) => {
-  var idAuto = utilidades.generatePID();
-  var idIPartida = 'InfoPartida:_',
-    req.user.username,
-    idAuto;
+  var idAuto = utilidades.generateID();
+  var idIPartida = 'InfoPartida:_' + `${req.user.username}` + '_' + idAuto;
   var infoPartida = new InfoPartida(req.infoPartida);
   infoPartida.idInfoPartida = idIPartida;
   infoPartida.jugador = getUsuario(req.idJugador);
@@ -161,12 +159,14 @@ exports.borrarInfoPartidaById = (req, res, next) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***borrarInfoPartidaByIds***//////////////////////////////////////////////////////
 exports.borrarInfosPartidaByIds = (req, res, next) => {
-  cont result = await InfoPartida.updateMany({
-    idInfoPartida: /req.idInfoPartida$/
-  }, {
-    isOcultar: true
-  });
-  return res.send(result.nModified);
+  return async () => {
+    const result = await InfoPartida.updateMany({
+      idInfoPartida: /req.body.idInfoPartida$/
+    }, {
+      isOcultar: true
+    });
+    return res.send(result.nModified);
+  }
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***eliminarInfoPartidaById***//////////////////////////////////////////////////////

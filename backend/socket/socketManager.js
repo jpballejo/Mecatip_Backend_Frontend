@@ -7,9 +7,12 @@ module.exports = (server) => {
   let socketEnEspera = require('./socket.enEspera');
   let socketSalas = require('./socket.salas');
   let mannagerJuego = require('./socket.juego');
+  let mannagerChat = require('./socket.chat');
+  let socketEnEsperaChat = require('./socket.enEsperaChat');
   socketClientes.funcionInit();
   socketSalas.funcionInit();
   socketEnEspera.funcionInit();
+  socketEnEsperaChat.funcionInit();
   socketSJWT(socketIo, jwtSecret);
   const juego = socketIo.of('/juego');
   const chat = socketIo.of('/chat');
@@ -66,4 +69,5 @@ module.exports = (server) => {
     }
   });
   mannagerJuego(juego, socketClientes, socketEnEspera, socketSalas);
+  mannagerChat(chat, socketEnEsperaChat, socketClientes, socketSalas)
 };

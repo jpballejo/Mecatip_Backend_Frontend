@@ -12,7 +12,7 @@ exports.agregarCliente = (socket, user) => {
       usuario: user
     }
     usuarios[`${user.username}`] = cliente;
-    console.log('Agrege cliente: ', user, 'Cliente socketid: ', socket.id);
+    console.log('Agrege cliente: ', user, 'Cliente socketId: ', socket.id);
     return true;
   } else {
     if(usuarios[user.username]) {
@@ -21,19 +21,20 @@ exports.agregarCliente = (socket, user) => {
         usuarios[user.username].socketClient = socket;
         console.log('Actualize socket: ', socket.id);
         usuarios[user.username].socketId = socket.id;
+        return true;
       }
     }
-    return true;
   }
   return false;
 };
 /////////////////////////////////////////////////////////////////////////
 exports.desconectarCliente = (username) => {
   if(usuarios[username]) {
-    index = usuarios.indexOf((username));
-    console.log('Encontre en el index: ', index, ' al cliente: ', username);
-    usuarios.splice(index, 1);
-    console.log('Elimine al cliente: ', index);
+    console.log('Encontre cliente...');
+    usuarios[`${username}`].socketClient = null;
+    console.log('Limpie socketClient');
+    usuarios[`${username}`].socketId = null;
+    console.log('Limpie socketId');
     return true;
   } else return false;
 };
@@ -61,12 +62,11 @@ exports.armarClientesPartida = (clientesU) => {
   if(clienteU.length > -1) {
     clientesU.forEach((cliente) => {
       if(usuarios[`${cliente}`]) {
-        this.clientes[`${cliente}`] = usuarios[`${clienten}`];
+        this.clientes[`${cliente}`] = usuarios[`${cliente}`];
       }
     });
   }
   return clientes;
 };
 /////////////////////////////////////////////////////////////////////////
-
 /////////////////////////////////////////////////////////////////////////

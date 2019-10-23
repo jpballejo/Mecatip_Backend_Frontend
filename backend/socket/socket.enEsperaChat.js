@@ -1,6 +1,7 @@
 console.log('Socket-enEsperaChat cargado...');
 exports.funcionInit = () => console.log('socket-enEsperaChat inicio');
 aEspera = [];
+
 exports.agregarAEspera = (userAuspiciante, usersInvitados) => {
   if(!aEspera[`${userAuspiciante}`]) {
     chatEspera = {};
@@ -10,7 +11,7 @@ exports.agregarAEspera = (userAuspiciante, usersInvitados) => {
         usuarioAuspiciante: userAuspiciante,
         invitados: usersInvitados
       }
-      aEspera[`${userAuspiciante}`] = chatEspera;
+      this.aEspera[`${userAuspiciante}`] = chatEspera;
       return true;
     }
     if(usersInvitados.length < -1) {
@@ -19,10 +20,32 @@ exports.agregarAEspera = (userAuspiciante, usersInvitados) => {
         usuarioAuspiciante: userAuspiciante,
         invitados: []
       }
-      aEspera[`${userAuspiciante}`] = chatEspera;
+      this.aEspera[`${userAuspiciante}`] = chatEspera;
       return true;
     }
   } else return false;
 };
-
-exports.meterEnEspera=(user)=>{}
+exports.meterEnEspera = (userAuspiciante, username) => {
+  if(this.aEspera[`${userAuspiciante}`]) {
+    if(!this.verificarEspera(userAuspiciante, username)) {
+      this.aEspera[`${userAuspiciante}`].invitados.push(username);
+      console.log('En_espera: ' + userAuspiciante + ' mando a: ' + username);
+      return true;
+    }
+    return false;
+  }
+};
+exports.verificarEspera = (userAuspiciante, userInvitado) => {
+  return this.aEspera[`${userAuspiciante}`].invitados.forEach((user) => {
+    if(user == userInvitado) return user;
+  });
+}
+exports.sacarDeEspera = (userAuspiciante, userInvitado) => {
+  index = this.aEspera[`${userAuspiciante}`].invitados
+  if(index>-1){
+    console.log('Encontre en el Index: ', index, ' a: ', userInvitado);
+    this.aEspera[`${userAuspiciante}`].invitados.splice(index,1);
+    console.log('Saque de espera al index: ', index, ' pertenecia al username: ', userInvitado);
+    return true;
+  }
+}
