@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JuegoComponent } from './juego/juego.component';
 import { ChatComponent } from './chat/chat.component';
-
+import { PrincipalComponent } from './principal/principal.component';
+import { EsperaComponent } from './espera/espera.component';
 const routes: Routes = [
-  { path: "", redirectTo: "juego", pathMatch: "full" },
+  { path: "", redirectTo: "principal", pathMatch: "full" },
+  { path: "principal", component: PrincipalComponent },
   { path: "juego", component: JuegoComponent },
-  { path: "chat", component: ChatComponent }
+  { path: "chat", component: ChatComponent },
+  {path: "enespera", component: EsperaComponent}
 
 
 ];

@@ -12,8 +12,8 @@ export class AuthService {
   authSubject = new BehaviorSubject(false);
   private token: string;
   public options$ = new ReplaySubject(null);
-
-  userSubject = new BehaviorSubject(false);
+  usuario$ = new BehaviorSubject(null);
+  token$ = new BehaviorSubject(null);
 
   /////////////////funciones-------------------------------//
   //**-----------------------------------------------------------------**//
@@ -21,17 +21,33 @@ export class AuthService {
   constructor(private HttpClient: HttpClient) {
     //constructor viste
   }
-  //////////Setter - Getter
-  public setToken(token: string) {
+  //////////Setter - Getter**************///////////////////////////////////////////////////////
+  setToken(token: string) {
     localStorage.setItem('ACCESS_TOKEN', token);
     this.token = token
+    this.token$.next(token);
     this.setHeaders();
+    console.log('Seteo token');
   }
-  public setUser(user: JwtResponseI): void { localStorage.setItem('userSess', JSON.stringify(user)); }
-  public getUser(): string {
+  /////////////////////****************************************************************////////////////
+  public getToken(): string { if (!this.token) { this.token = localStorage.getItem('ACCESS_TOKEN'); } return this.token; }
+  public getToken$() { if (this.token$.getValue) return this.token$; return this.token$.next(this.getToken()); }
+  /////////////////////****************************************************************////////////////
+
+  setUser(user) { localStorage.setItem('userSess', JSON.stringify(user)); this.usuario$.next(user); }
+  /////////////////////****************************************************************////////////////
+
+  public getUser() {
     return localStorage.getItem('userSess');
   }
-  public getToken(): string { if (!this.token) { this.token = localStorage.getItem('ACCESS_TOKEN'); } return this.token; }
+  /////////////////////****************************************************************////////////////
+
+  limpiarSession() {
+    localStorage.removeItem('userSess');
+    localStorage.removeItem('ACCESS_TOKEN');
+  }
+  /////////////////////****************************************************************////////////////
+
   setHeaders() {
     console.log('token: ', this.token);
     let headers = new HttpHeaders({
@@ -46,14 +62,14 @@ export class AuthService {
   registrarse(user: UserI): Observable<JwtResponseI> {
 
     return this.HttpClient.post<JwtResponseI>(`${this.apiURL}signup/`, user)
-    .pipe(map((res: JwtResponseI) => {
-      if (res) {
-        this.setToken(res.token);
-        console.log(res);
-
-      }
-      return res;
-    }))
+      .pipe(map((res: JwtResponseI) => {
+        if (res) {
+          this.setToken(res.token);
+          console.log('respuesta signup: ' + res);
+          this.setUser(res);
+          return res;
+        }
+      }))
   }
   //**-----------------------------------------------------------------**//
   //////////LOGIN
@@ -61,8 +77,9 @@ export class AuthService {
 
     return this.HttpClient.post<JwtResponseI>(`${this.apiURL}login/`, user)
       .pipe(map(user => {
-        console.log(user);
+        console.log('respuesta login: ' + user);
         this.setToken(user.token);
+        this.setUser(user);
         return user;
       }));
   }
@@ -72,6 +89,7 @@ export class AuthService {
   logout(): void {
     this.token = '';
     this.setToken(null);
+    this.limpiarSession();
     console.log('Usuario logout...');
   }
 

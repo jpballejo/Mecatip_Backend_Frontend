@@ -12,47 +12,53 @@ created by: by Jp.
 //------------------------------------------------------------------------------//
 //------------------------------------------------------------------------------//
 //////////////////////FUNCIONES///////////////////////////////////////////////////
-function getUsuario(username_Email) {
-  Usuario.findOne({
+async function getUsuario(username_Email) {
+  var result = Usuario.findOne({
     $or: [{
-      email: username
+      email: username_Email
     }, {
-      username: username
+      username: username_Email
     }]
-  }).where({
+  }, {
     isOcultar: false
-  }).exec((err, user) => {
+  }, {}, (err, user) => {
     if(user) return user;
     if(err) {
       console.log(err);
     }
-  })
+  });
+  console.log('Este es el resulltado: ' + result);
+  return result
 };
-var buscarPartida = (idPartida) => Partida.findOne({
-  idPartida: idPartida
-}, (err, partida) => {
-  if(err) return err;
-  if(!partida) return 'No se encontro ninguna partida con id: ', idPartida;
-  if(partida) return partida;
-});
-//var setearInfoPartida =
+var buscarPartida = async (idPartida) => {
+  //console.log(idPartida);
+  var result = Partida.findOne({
+    idPartida: idPartida
+  }, (err, partida) => {
+    if(err) return err;
+    if(!partida) return 'No se encontro ninguna partida con id: ', idPartida;
+    if(partida) return partida;
+  });
+  console.log('Este es el resulltado: ' + result);
+  return result;
+}
+var buscarYBorrarInfosPartidasAsociados = async (idPartida) => {}
+var buscarYEliminarInfosPartidasAsociados = async (idPartida) => {}
 //------------------------------------------------------------------------------//
 ////////////////////////////////////PARTIDA//////////////////////
 ////////////////////////////////////////////***altaPartida***//////////////////////////////////////////////////////
 exports.altaPartida = (req, res, next) => {
   var idAuto = utilidades.generateID();
-  var idPartida = 'Partida:_',
-    idAuto;
+  var idPartida = 'Partida:_' + idAuto;
   var partidaNew = new Partida({
     idPartida: idPartida,
-    tipoPartida: req.tipoPartida
+    tipoPartida: req.params.tipopartida
   });
   partidaNew.save((err, partida) => {
     if(err) return next(err);
     if(partida) {
-      //  res.status(200);
       return res.json({
-        'idPartida': partidaNew.idPartida
+        'idPartida': partida.idPartida
       });
     }
   });
@@ -61,23 +67,23 @@ exports.altaPartida = (req, res, next) => {
 ////////////////////////////////////////////***borrarPartidaById***//////////////////////////////////////////////////////
 exports.borrarPartidaById = (req, res, next) => {
   var query = {
-    idPartida: req.body.idPartida
+    idPartida: req.param.idPartida
   };
   Partida.where(query).update({
     isOcultar: true
-  }).exec(() => res.send('ok'));
+  }).exec(() => {
+    if(buscarYBorrarInfosPartidasAsociados(req.param.idPartida)) return res.send('ok')
+  });
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***eliminarPartidaById***//////////////////////////////////////////////////////
 exports.eliminarPartidaById = (req, res, next) => {
   Partida.findOneAndDelete({
-    idPartida: req.idPartida
+    idPartida: req.param.idPartida
   }, (err, partida) => {
-    if(err) return next(err);
+    if(err) return next('Error eliminarPartidabyId:' + err);
     if(partida) {
-      //  res.status(200);
-      //res.send('ok');
-      return res.json(partida);
+      if(buscarYEliminarInfosPartidaAsociados(req.param.idPartida)) return res.json(partida);
     }
   });
 };
@@ -90,11 +96,10 @@ exports.getPartidaById = (req, res, next) => {
   Partida.findOne(query, (err, partida) => {
     if(err) return next(err);
     if(!partida) {
-      res.status(200);
-      return res.send('No se esncontro una partida con idP,artida: ', req.idPartida);
+      var idp = req.idPartida;
+      return res.send('No se esncontro una partida con idPartida: ' + idp);
     }
     if(partida) {
-      //  res.send(200);
       return res.json(partida);
     }
   });
@@ -102,14 +107,14 @@ exports.getPartidaById = (req, res, next) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***getPartidas***//////////////////////////////////////////////////////
 exports.getPartidas = (req, res, next) => {
-  Partida.find({}, (err, partidas) => {
+  Partida.find({
+    isOcultar: false
+  }, (err, partidas) => {
     if(err) return next(err);
     if(!partidas) {
-      //  res.status(200);
-      return res.send('No se esncontraron partidas.');
+      return res.send('No se encontraron partidas.');
     }
     if(partidas) {
-      //  res.send(200);
       return res.json(partidas);
     }
   })
@@ -117,27 +122,33 @@ exports.getPartidas = (req, res, next) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////INFOPARTIDA//////////////////////
 ////////////////////////////////////////////***crearInfoPartida***//////////////////////////////////////////////////////
-exports.crearInfoPartida = (req, res, next) => {
+exports.crearInfoPartida = async (req, res, next) => {
   var idAuto = utilidades.generateID();
-  var idIPartida = 'InfoPartida:_' + `${req.user.username}` + '_' + idAuto;
-  var infoPartida = new InfoPartida(req.infoPartida);
-  infoPartida.idInfoPartida = idIPartida;
-  infoPartida.jugador = getUsuario(req.idJugador);
-  infoPartida.partida = buscarPartida(req.idPartida);
+  var idInfoPartida = 'InfoPartida:_' + `${req.user.username}` + '_' + idAuto;
+  var infoPartida = new InfoPartida(req.body);
+  infoPartida.idInfoPartida = idInfoPartida;
+  infoPartida.contrincante = req.body.idJugador;
+  infoPartida.idPartida = req.body.idPartida;
   infoPartida.save().then((infoPartida) => {
-    Usuario.findOne({
-      username: req.user.username
-    }, (err, user) => {
-      if(err) return err;
-      if(user) {
-        user.infoPartida.push(infoPartida);
-        user.save((err, user) => {
-          if(err) return next(err);
-          if(user) return res.json(infoPartida);
-        });
-      }
-    });
+    if(infoPartida) {
+      Usuario.findOne({
+        username: `${req.user.username}`
+      }, (err, user) => {
+        if(err) return err;
+        if(user) {
+          console.log(infoPartida);
+          user.infoPartidas.addToSet(infoPartida)
+          user.save((err, user) => {
+            if(err) return next(err);
+            if(user) {
+              return res.json(infoPartida);
+            }
+          });
+        }
+      });
+    }
   });
+  return;
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***modificarInfoPartidaById***//////////////////////////////////////////////////////
@@ -145,7 +156,7 @@ exports.modificarInfoPartidaById = (req, res, next) => {
   var query = {
     idInfoPartida: req.idInfoPartida
   };
-  InfoPartida.where(query).update(req.infoPartidaMod).exec((infoPartida) => res.json(infoPartida));
+  InfoPartida.where(query).update(req.body).exec((infoPartida) => res.json(infoPartida));
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***borrarInfoPartidaById***//////////////////////////////////////////////////////
@@ -187,7 +198,7 @@ exports.eliminarInfosPartidaByIds = (req, res, next) => {
 exports.getinfoPartidas = (req, res, next) => {
   InfoPartida.find({}).where({
     isOcultar: false
-  }).populate('partida').populate('usuario').select('-created -id').exec((err, infospartidas) => {
+  }).populate('partida').populate('usuario').select('-created -id -isOcultar').exec((err, infospartidas) => {
     if(err) return next(err);
     if(infospartidas) return res.json(infospartidas);
     if(!infospartidas) return res.send('No hay registros.');
@@ -195,9 +206,10 @@ exports.getinfoPartidas = (req, res, next) => {
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***getInfosPartidaByIdPartida***//////////////////////////////////////////////////////
-exports.getInfoPartidaByIdPartida = (req, res, next) => {
+exports.getInfosPartidaByIdPartida = (req, res, next) => {
+
   InfoPartida.find({
-    idInfoPartida: req.idInfoPartida
+    idPartida: req.param.idPartida
   }).where({
     isOcultar: false
   }).populate('partida').populate('usuario').select('-created -id').exec((err, infopartida) => {

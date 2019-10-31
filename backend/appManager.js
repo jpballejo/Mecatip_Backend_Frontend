@@ -36,8 +36,9 @@ module.exports = (app, cookieParser, passport, headers, express, path, flash) =>
   app.use('/', passportRouter(passport)); //indice de rutas aca va socket y passport
   app.use('/users', isAuthenticated, usersRouter); //rutas del usuario
   app.use('/palabras', palabrasRouter); //rutas de la api para agregar y consumir palabras
-  app.use('/juego', juegoRouter); //rutas de la api del juego??
+  app.use('/juego', isAuthenticated,juegoRouter); //rutas de la api del juego??
   app.use('/socket', socketRouter);
+
   ////////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////////

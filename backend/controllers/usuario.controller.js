@@ -84,7 +84,6 @@ exports.getUsuario = (req, res, next) => {
  * @return {[type]}        [description]
  */
 exports.updateUsuario = (req, res, next) => {
-  //req.newUser tiene que ser un json {'clave':'valor'}
   Usuario.findOnedAndUpdate({username:req.body.usuarioNuevo.username}, req.body.usuarioNuevo, (err, usuario) => {
     if(err) {
       return next(err);

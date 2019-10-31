@@ -8,13 +8,13 @@ var infoPartida = new Schema({
     type: String,
     index: true
   },
-  jugador: { //link con el jugador
-    type: Schema.Types.ObjectId,
-    ref: 'usuario'
+  contrincante: { //link con el jugadorSchema.Types.Mixed,
+    type: String,
+    //  ref: 'usuario'
   },
-  partida: { //link con la partida
-    type: Schema.Types.ObjectId,
-    ref: 'partida'
+  idPartida: { //link con la partida Schema.Types.Mixed
+    type: String,
+    //   ref: 'partida'
   },
   puntos_ganados: {
     type: Number,
