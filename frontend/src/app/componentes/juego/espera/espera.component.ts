@@ -1,57 +1,59 @@
 import { Component, OnInit } from '@angular/core';
+import { UserI } from '../../../interfaces/user';
 
 
-
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-espera',
   templateUrl: './espera.component.html',
   styleUrls: ['./espera.component.css']
 })
-export class EsperaComponent implements OnInit {
 
-  jugadores=  [
-  {
-    name: 'jp',
-    imagen: 'f/f3/Flag_of_Russia.svg'
+export class EsperaComponent implements OnInit {
+  public enEspera: [UserI];
+  jugadores = [
+    {
+      name: 'jp',
+      imagen: 'f/f3/Flag_of_Russia.svg'
     },
-   {
-    name: 'jp2',
-    imagen: 'f/f3/Flag_of_Russia.svg'
-    },  {
-    name: 'jp3',
-    imagen: 'f/f3/Flag_of_Russia.svg'
-    },  {
-    name: 'jp4',
-    imagen: 'f/f3/Flag_of_Russia.svg'
+    {
+      name: 'jp2',
+      imagen: 'f/f3/Flag_of_Russia.svg'
+    }, {
+      name: 'jp3',
+      imagen: 'f/f3/Flag_of_Russia.svg'
+    }, {
+      name: 'jp4',
+      imagen: 'f/f3/Flag_of_Russia.svg'
     }
-];
+  ];
   closeResult: string;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
-  recibeDatos(dd){
-
-  console.log(dd);
-
-  };
-    private getDismissReason(reason: any): string {
-      if (reason === ModalDismissReasons.ESC) {
-        return 'by pressing ESC';
-      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-        return 'by clicking on a backdrop';
-      } else {
-        return  `with: ${reason}`;
+  ponerEnEspera(jugador) {
+    for (let i = 0; i <= this.enEspera.length; i++) {
+      if (this.enEspera[i].username == jugador.username) {
+        return 'EXISTE';
       }
     }
+    this.enEspera.push(jugador);
+    return 'AGREGADO';
+  };
 
-    open(content) {
-  this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-    this.closeResult = `Closed with: ${result}`;
-  }, (reason) => {
-    this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  });
-}
-}
+  sacarDeEspera(jugador) {
+
+    for (let i = 0; i <= this.enEspera.length; i++) {
+      if (this.enEspera[i].username == jugador.username) {
+        return 'Saque de espera al jugador en el indice: '+this.enEspera.splice(i, 1);
+      }
+
+    }
+
+  }
+  emitir() {
+
+  }
+};

@@ -8,23 +8,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './principal/principal.component';
 import { EsperaComponent } from './espera/espera.component';
 import { SeleccionJugadorComponent } from './seleccion-jugador/seleccion-jugador.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//import { BrowserModule } from '@angular/platform-browser';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
 @NgModule({
-  declarations: [JuegoComponent, ChatComponent, PrincipalComponent, EsperaComponent, SeleccionJugadorComponent, BrowserModule, NgbModule],
+  declarations: [JuegoComponent, ChatComponent, PrincipalComponent, EsperaComponent, SeleccionJugadorComponent],
   imports: [
     CommonModule,
     JuegoRouting,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserModule, NgbModule
+    //  BrowserModule, //NgbModule
 
   ],
-  providers: [],
-  exports: [JuegoComponent, ChatComponent, BrowserModule, NgbModule]
+  providers: [],//NgbModule BrowserModule
+  exports: [JuegoComponent, ChatComponent]
 })
 export class JuegoModule { }
