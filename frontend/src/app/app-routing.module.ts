@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", redirectTo: "/inicio", pathMatch: "full" },
   { path: "inicio", component: PaginaInicioComponent },
   { path: "auth", loadChildren: './componentes/auth/auth.module#AuthModule' },
-  { path: "palabras", loadChildren: './componentes/palabras/palabras.module#PalabrasModule' },
+  { path: "palabras", loadChildren: './componentes/palabras/palabras.module#PalabrasModule' ,canActivate:[AuthGuard]},
   { path: "usuarios", loadChildren: './componentes/usuarios/usuarios.module#UsuariosModule' ,canActivate:[AuthGuard]},
 //  { path: "chat", component: ChatComponent },
   { path: "juego", loadChildren:'./componentes/juego/juego.module#JuegoModule', canActivate:[AuthGuard]},

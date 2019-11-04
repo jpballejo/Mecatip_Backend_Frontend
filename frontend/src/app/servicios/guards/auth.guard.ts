@@ -23,7 +23,10 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     return true;
   }
   handler = (next: ActivatedRouteSnapshot) => {
-    if (this.auth.getToken()) { return true; }
+    if (this.auth.getToken()) {
+      console.log('Tiene TOken')
+      return true;
+    }
     else { return this.router.navigate(['/auth/login']); }
 
   }

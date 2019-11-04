@@ -1,4 +1,4 @@
-console.log('Socket-Clientes cargado...');
+console.log('Socket-Clientes-juego cargado...');
 exports.funcionInit = () => {
   console.log('socket-clientes inicio');
 }

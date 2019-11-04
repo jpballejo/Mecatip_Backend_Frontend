@@ -1,4 +1,5 @@
 module.exports = (juego, socketClientes, socketEnEspera, socketSalas) => {
+  
   juego.on('desafiar', (socket, usuariosDesafiados) => {
     socketEnEspera.ponerEnEspera(socket.decoded_token.username, usuariosDesafiados);
     desafiar(socket.decoded_token.username, usuariosDesafiados);
@@ -17,6 +18,7 @@ module.exports = (juego, socketClientes, socketEnEspera, socketSalas) => {
       aceptoDesafio(uRetador, socket.decoded_token.username);
     }
   });
+  //agregar si no acepto a tiempo, agregar si ya salio la partida implementar a futuro
   var aceptoDesafio = (retador, contendiente) => {
     clienteR = socketClientes.getClienteUsername(retador);
     clienteR.socketClient.emit('aceptoDes', {

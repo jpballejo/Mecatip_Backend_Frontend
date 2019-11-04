@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserI } from '../../../interfaces/user';
-
+import { SocketService } from '../../../servicios/socket.service'
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 @Component({
@@ -10,47 +10,56 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class EsperaComponent implements OnInit {
-  public enEspera: [UserI];
+  enEspera: UserI[] = [];
+
+  jugador = { username: null }
   jugadores = [
     {
-      name: 'jp',
+      username: 'jp',
       imagen: 'f/f3/Flag_of_Russia.svg'
     },
     {
-      name: 'jp2',
+      username: 'jp2',
       imagen: 'f/f3/Flag_of_Russia.svg'
     }, {
-      name: 'jp3',
+      username: 'jp3',
       imagen: 'f/f3/Flag_of_Russia.svg'
     }, {
-      name: 'jp4',
+      username: 'jp4',
       imagen: 'f/f3/Flag_of_Russia.svg'
     }
   ];
   closeResult: string;
 
-  constructor(private modalService: NgbModal) { }
-
-  ngOnInit() {
+  constructor(private modalService: NgbModal, public socketAPI: SocketService) { }
+  no() {
+    this.socketAPI.emitirCoso()
   }
-  ponerEnEspera(jugador) {
-    for (let i = 0; i <= this.enEspera.length; i++) {
-      if (this.enEspera[i].username == jugador.username) {
-        return 'EXISTE';
+  ngOnInit() {
+    this.socketAPI.usuario_online$.subscribe(u => console.log('viene de socket', u))
+    this.socketAPI.listaUserUpdate$.subscribe(u => console.log('USUARIOS', u))
+  }
+  ponerEnEspera(jug: UserI) {
+    console.log(jug);
+
+    /*
+    if (this.enEspera.length) {
+      for (let i = 0; i <= this.enEspera.length; i++) {
+        console.log('aca',this.enEspera);
+        if (this.enEspera[i].username == jug.username) {
+          return 'EXISTE';
+        }
       }
     }
-    this.enEspera.push(jugador);
-    return 'AGREGADO';
+    */
+    if (this.enEspera.indexOf(jug) > -1) { console.log('SAQUE'); return this.sacarDeEspera(jug); }
+    this.enEspera.push(jug);
+    console.log(this.enEspera);
+    return console.log('AGREGADO');
   };
 
   sacarDeEspera(jugador) {
-
-    for (let i = 0; i <= this.enEspera.length; i++) {
-      if (this.enEspera[i].username == jugador.username) {
-        return 'Saque de espera al jugador en el indice: '+this.enEspera.splice(i, 1);
-      }
-
-    }
+    this.enEspera.splice(this.enEspera.indexOf(jugador), 1)
 
   }
   emitir() {
