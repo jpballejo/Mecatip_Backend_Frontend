@@ -7,63 +7,50 @@ module.exports = (server) => {
   let socketEnEspera = require('./socket.enEspera');
   let socketSalas = require('./socket.salas');
   let mannagerJuego = require('./socket.juego');
+  let mannagerChat = require('./socket.chat');
+  let socketEnEsperaChat = require('./socket.enEsperaChat');
+  let socketClientesJuego = require('./socket.clientesJuego');
+  let socketClienteschat = require('./socket.clienteChat');
   socketClientes.funcionInit();
   socketSalas.funcionInit();
   socketEnEspera.funcionInit();
-  socketSJWT(socketIo, jwtSecret);
+  socketEnEsperaChat.funcionInit();
+  //socketSJWT(socketIo, jwtSecret);
   const juego = socketIo.of('/juego');
   const chat = socketIo.of('/chat');
-  //  var socketPJWT = require('./socket.validacion.PJWT');
-  socketIo.on('connection', (socket) => {
-    console.log('hello! ', socket.decoded_token.username);
-    if(socket.decoded_token.username) {
-      Usuarios.findOne({
-        username: socket.decoded_token.username
-      }, (err, user) => {
-        if(err) return console.log(err);
-        if(user) {
-          socketClientes.agregarCliente(socket, user);
-          socketIo.sockets.emit('usuario_online', {
-            usuario: user.username
-          });
-        }
-      });
-      socket.on('disconnect', () => socketClientes.desconectarCliente(socket.decoded_token.username));
-    }
-  });
+  socketSJWT(juego, jwtSecret);
+  socketSJWT(chat, jwtSecret);
   juego.on('connection', (socket) => {
-    console.log('hello! ', socket.decoded_token.username);
+    console.log('hello juego! ', socket.decoded_token.username);
     if(socket.decoded_token.username) {
       Usuarios.findOne({
         username: socket.decoded_token.username
       }, (err, user) => {
-        if(err) return console.log(err);
-        if(user) {
-          socketClientes.agregarCliente(socket, user);
-          juego.sockets.emit('usuario_online', {
-            usuario: user.username
-          });
-        }
+        socketClientesJuego.agregarCliente(socket, user);
+        juego.emit('listaUserUpdate', {
+          usuariosOnline: socketClientesJuego.getClientesOnline()
+        });
       });
-      socket.on('disconnect', () => socketClientes.desconectarCliente(socket.decoded_token.username));
+      socket.on('disconnect', () => socketClientesJuego.desconectarCliente(socket.decoded_token.username));
     }
   });
   chat.on('connection', (socket) => {
-    console.log('hello! ', socket.decoded_token.username);
+    console.log('hello chat! ', socket.decoded_token.username);
     if(socket.decoded_token.username) {
       Usuarios.findOne({
         username: socket.decoded_token.username
       }, (err, user) => {
-        if(err) return console.log(err);
-        if(user) {
-          socketClientes.agregarCliente(socket, user);
-          chat.sockets.emit('usuario_online', {
-            usuario: user.username
-          });
-        }
+        socketClienteschat.agregarCliente(socket, user);
+        chat.emit('listaUserUpdate', {
+          usuariosOnline: socketClienteschat.getClientesOnline()
+        });
       });
-      socket.on('disconnect', () => socketClientes.desconectarCliente(socket.decoded_token.username));
+      socket.on('disconnect', () => {
+        socketClienteschat.desconectarCliente(socket.decoded_token.username)
+      });
     }
   });
-  mannagerJuego(juego, socketClientes, socketEnEspera, socketSalas);
+
+  mannagerJuego(juego, socketClientesJuego, socketEnEspera, socketSalas);
+  mannagerChat(chat, socketEnEsperaChat, socketClienteschat, socketSalas)
 };

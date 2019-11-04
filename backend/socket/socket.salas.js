@@ -1,51 +1,57 @@
 console.log('Socket-salas cargado...');
 exports.funcionInit = () => console.log('socket-salas inicio');
 salas = [];
-validaArray = (array) => array.length > -1;
+validaArray = (array) => {
+  if(array != null) {
+    return array.length > -1;
+  }
+  return false;
+}
 ////////////////////////////////////////////////////////////////////////////
 exports.agregarSala = (sala, clientes, tipo, creador) => {
-  if(!salas[`${sala}`]) {
-    var salaNueva = {}
-    if(validaArray(clientes)) {
-      salaNueva = {
-        creador: creador,
-        sala: sala,
-        clientes: clientes,
-        tipo: tipo
-      };
-    } else {
-      salaNueva = {
-        creador: creador,
-        sala: sala,
-        clientes: [],
-        tipo: tipo
-      };
+  let sal = salas.filter(s => s.sala == sala);
+  if(!sal) {
+    var salaNueva = {
+      creador: creador,
+      sala: sala,
+      clientes: clientes || [],
+      tipo: tipo
     }
-    salas[`${sala}`] = salaNueva;
-    console.log('Agrege sala: ', sala);
+    salas.push(salaNueva);
+    console.log('Agrege sala: ', salaNueva);
     return salaNueva;
   } else {
-    console.log('Ya existe!');
-    return;
+    console.log('Ya existe sala: '+ sal);
+    return sal;
   }
 };
 /////////////////////////////////////////////////////////////////////////
 exports.agregarASala = (sala, cliente) => {
-  if(salas[`${sala}`]) {
-    if(!salas[`${sala}`].clientes[`${cliente.usuario.username}`]) {
+  let sal = salas.filter(s => s.sala == sala);
+  if(sal) {
+    let cli = sal.clientes.filter(c => c.id == cliente.usuario._id)[0];
+    if(!cli) {
       console.log('Agrege a sala: ', sala);
-      salas[`${sala}`].clientes[`${cliente.usuario.username}`] = cliente;
-      return true;
+      sal.clientes.push(cliente);
+      return cliente;
+    } else {
+      console.log('Ya estaba en sala!');
+      return cli;
     }
   }
   return false;
 }
 /////////////////////////////////////////////////////////////////////////
 exports.eliminarSala = (sala) => {
-  if(salas[`${sala}`]) {
+  let sal = salas.filter(s => s.sala == sala);
+  if(sal) {
+    sal.clientes.forEach((cli) => {
+      cli.socketClient.leave(sala);
+      console.log('Desconecte de sala: ', cli.socketClient);
+    });
     index = salas.indexOf(sala);
     console.log('Econtre sala: ', sala, ' en el index: ', index);
-    if(indez > -1) {
+    if(index > -1) {
       salas.splice(index, 1);
       console.log('Elimine la sala en el index: ', index);
       return true;
@@ -55,28 +61,27 @@ exports.eliminarSala = (sala) => {
 }
 /////////////////////////////////////////////////////////////////////////
 exports.getClientesSala = (sala) => {
-  if(salas[`${sala}`] && salas[`${sala}`].clientes) {
-    console.log('Encontre sala: ', sala, ' clientes en sala: ', salas[`${sala}`].clientes);
-    return salas[`${sala}`].clientes;
-  } else return;
+  let sal = salas.filter(s => s.sala == sala);
+  if(sal && sal.clientes) {
+    console.log('Encontre sala: ', sala, ' clientes en sala: ', sal.clientes);
+    return sal.clientes;
+  } else return null;
 }
 /////////////////////////////////////////////////////////////////////////
 exports.getCLienteEnSala = (username) => {
-  salas.forEach((salas) => {
-    if(salas.clientes[`${username}`]) {
-      console.log('Encontre sala: ', sala, ' cliente en sala: ', salas.clientes[`${username}`]);
-      return salas.clientes[`${username}`];
-    }
-  })
+  let sal = salas.filter(sal => sal.clientes.find(cli => cli.usuario.username == username))[0];
+  return sal;
 }
 /////////////////////////////////////////////////////////////////////////
 exports.sacarDeSala = (username) => {
-  return salas.forEach((salas) => {
-    if(salas.clientes[`${username}`]) {
-      index = salas.clientes.indexOf(`${username}`);
-      return salas.clientes.splice(index, 1);
-    }
-  });
+  let sal = salas.filter(sal => sal.clientes.find(cli => cli.usuario.username == username))[0];
+  if(sal) {
+    console.log('Encontre sala!');
+    console.log('Saco cliente: ' + username);
+    let index = sal.clientes.indexOf(username);
+    return sal.clientes.splice(index, 1);
+  }
+  return null;
 }
 /////////////////////////////////////////////////////////////////////////
-exports.getSala = (sala) => salas[`${sala}`];
+exports.getSala = (sala) => salas.filter(sal => sal.sala = sala)[0];

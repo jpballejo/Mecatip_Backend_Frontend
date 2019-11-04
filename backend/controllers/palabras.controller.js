@@ -1,5 +1,13 @@
 var utilidades = require('../utilidades/util');
 var Palabra = require('../models/palabras.modelo');
+var partidaPalabras = new Array();
+/*var palabras = require('../palabras.json');
+palabras.forEach((pal) => {
+  np = new Palabra(pal);
+  np.save((err, palabra) => {
+    console.log(palabra);
+  })
+});*/
 //cosas
 //------------------------------------------------------------------------------//
 /*
@@ -20,7 +28,7 @@ exports.altaPalabra = function(req, res, next) {
   nuevaP.save(function(err, palabra) {
     if(err) return next(err);
     if(palabra) {
-
+      console.log('Agrege palabra: ', palabra);
       return res.send("OK");
     }
   });
@@ -35,36 +43,37 @@ exports.altaPalabra = function(req, res, next) {
  * @return {[type]}        [description]
  */
 exports.eliminarLogicamente = function(req, res, next) {
-  Palabra.where({
-    _id: req.body.idPalabra
-  }).update({
+  Palabra.findByIdAndUpdate({
+    id: req.params.idPalabra
+  }, {
     isOcultar: true
-  }).exec(() => res.send('OK'));
+  }, (err, palabra) => {
+    if(palabra) return res.send('OK');
+    if(err) return next(err);
+  })
+  console.log('borrar palabra');
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////**findOneAndDelete-DELETE/////////////////////////////////////////////////////////////////////////////////////
 exports.eliminarPalabra = function(req, res, next) {
   Palabra.findByIdAndRemove({
-    _id: req.palabra.id
+    id: req.params.id
   }, (err, palabra) => {
     if(err) return next(err);
     if(palabra) {
-    //  res.status(200);
-    return res.json(palabra);
-       //res.send('OK, eliminado');
+      //  res.status(200);
+      return res.json(palabra);
+      //res.send('OK, eliminado');
     }
   });
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////**listarPalabras-GET/////////////////////////////////////////////////////////////////////////////////////
 exports.getPalabras = (req, res, next) => {
-  var query = Palabra.find({});
-  query.where({
-    isOcultar: false
-  });
-  query.exec((err, palabras) => {
+  Palabra.find({}, 'palabra_frase nivel -_id', (err, palabras) => {
     if(err) return next(err);
     if(palabras) {
+      console.log(palabras);
       return res.json(palabras);
       //return res.send('OK');
     }
@@ -80,7 +89,6 @@ exports.getAllPalabras = (req, res, next) => {
     if(err) return next
     if(palabras) {
       return res.json(palabras);
-      //    res.send('OK');
     }
   });
 };
@@ -92,50 +100,25 @@ exports.buscaYremplaza = (req, res, next) => {
   }, {
     palabra_frase: req.body.palabraNew
   }).exec((err, palabra) => {
-  return  res.json(palabra);
+    return res.json(palabra);
   })
 };
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////**getPalabrasXNivel-GET/////////////////////////////////////////////////////////////////////////////////////
 exports.palabrasXlvl = (req, res, next) => {
-  var query = Palabra.find({}).where({
-    nivel: req.body.lvl
-  }).exec((err, palabras) => {
-    if(err) return nex(err);
-    if(palabras) {
-    //  res.status(200);
-      return res.json(palabras);
-    }
+  console.log(`${req.params.lvl}`);
+//  console.log(req.param('lvl'));
+  Palabra.findRandom({
+    nivel:`${req.params.lvl}`
+  }, {}, {
+    limit: 12
+  }, (err, pal) => {
+    if(err) return next(err);
+    if(pal) return res.json(pal);
     if(!palabras) return res.send('No hay palabras registradas');
   });
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////**getPalabrasPartida-GET/////////////////////////////////////////////////////////////////////////////////////
-exports.palabrasXPartida = (req, res, next) => {
-  var palabrasArrayXlvl = {}
-  for(var i = 1; i <= 13; i++) {
-    palabrasArrayXlvl["lvl" + i] = armarNivel(i);
-  }
-  if(palabrasArrayXlvl) {
-  //  res.status(200);
-    return res.json(palabrasArrayXlvl);
-  }
-};
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////**armarNivel/////////////////////////////////////////////////////////////////////////////////////
-function armarNivel(lvl) {
-  Palabra.findRandom({
-    nivel: lvl
-  }, {}, {
-    limit: 10
-  }, (err, resultado) => {
-    if(err) return err + 'Nivel: ' + lvl;
-    if(resultado) return resultado;
-  });
-};
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////****************/////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////****************/////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////****************/////////////////////////////////////////////////////////////////////////////////////

@@ -1,11 +1,11 @@
 'use-strict'
 const mongoose = require('mongoose');
 var bCrypt = require('bcrypt');
-//var infoPartida = require('./infoPartida.schema');
+var infoPartida = require('./infoPartida.schema');
 const Schema = mongoose.Schema;
 var usuarioSchema = new Schema({
   id: {
- type: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     //unique:true
   },
   nombre: String,
@@ -32,10 +32,7 @@ var usuarioSchema = new Schema({
     type: String,
     default: 'sin-imagen'
   },
-  infoPartidas: [{
-    type: Schema.Types.ObjectId,
-    ref: 'infoPartida'
-  }],
+  infoPartidas: [{type:Schema.Types.Mixed, ref:'infoPartida'}],
   tipoUsuario: {
     type: String,
     enum: ['ADMIN', 'USER'],
@@ -114,5 +111,4 @@ usuarioSchema.pre('save', function(next) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////*************************///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 module.exports = usuarioSchema;

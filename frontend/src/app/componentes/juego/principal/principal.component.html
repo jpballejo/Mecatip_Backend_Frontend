@@ -1,0 +1,32 @@
+<div class="contenedorPrincipal">
+
+  <div class="btn">
+    <div class="btnSingle">
+      <button type="button" name="btnSIM" routerLink="/juego/juego" >SIMPLE</button>
+    </div>
+    <div class="btnVs"> <button type="button" routerLink="/juego/enespera" name="btnVS">VS</button></div>
+  </div>
+  <div class="chat">
+    <app-chat></app-chat>
+    <div class="userOnline">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Jugadores disponibles</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let jugador of jugadores; index as i">
+          <th scope="row">{{ jugador.name }}</th>
+
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+</div>

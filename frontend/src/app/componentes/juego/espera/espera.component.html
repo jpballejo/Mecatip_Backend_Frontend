@@ -1,0 +1,39 @@
+<div>
+  <div (click)="no()">no usar!!!</div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+
+        <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jugador of (socketAPI.listaUserUpdate$ | async)?.usuariosOnline || []" (click)="ponerEnEspera(jugador)">
+
+        <td>
+          <label class="btn-primary" ngbButtonLabel>
+            <input id="{{ jugador }}" type="checkbox" ngbButton>{{ jugador }}
+
+          </label>
+        </td>
+        <td>
+          {{jugador}}
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+<table class="table table-striped">
+  <thead>
+      <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores en Espera</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jugadorEsp of enEspera">
+      <td>{{jugadorEsp}}</td>
+
+    </tr>
+  </tbody>
+</table>
+</div>

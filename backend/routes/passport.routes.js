@@ -7,12 +7,13 @@ var jwt = require('jsonwebtoken');
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = function(passport) {
   /////////////LOGIN-POST-----------------------------------------------------------------------------------------------------------------------------
-
   router.post('/login', passport.authenticate('local', {
     session: false
   }), function(req, res) {
     userT = {
-            username: req.user.username
+      username: req.user.username,
+      tipoUsuario: req.user.tipo,
+      token: ''
     }
     const token = jwt.sign(userT, jwtSecret.secret);
     userT.token = token;
@@ -35,28 +36,22 @@ module.exports = function(passport) {
         if(user) {
           req.login(user, () => {
             userT = {
-
               username: user.username
-
             };
             const nToken = jwt.sign(userT, jwtSecret.secret);
             userT.token = nToken;
           });
           return res.send(userT);
         }
-
       });
     } else {
-
       return res.send('Error usuario ya logeado.');
     }
   });
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////SIGNOUT------------------------------------------------------------------------------------------------------------------------------
-
   router.get('/logout', function(req, res, next) {
     req.logout();
-
     return res.send('LOGOUT');
   });
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
