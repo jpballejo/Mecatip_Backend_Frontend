@@ -6,7 +6,7 @@ usuarios = [];
 /////////////////////////////////////////////////////////////////////////
 exports.agregarCliente = (socket, user) => {
   console.log(user._id);
-  let _user = usuarios.filter(u => u.id == user._id);
+  let _user = usuarios.filter(u => u.id == user._id)[0];
 
   if(!_user) {
     usuarios.push({
