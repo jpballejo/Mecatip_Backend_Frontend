@@ -6,14 +6,16 @@ usuarios = [];
 /////////////////////////////////////////////////////////////////////////
 exports.agregarCliente = (socket, user) => {
   console.log(user._id);
-  let _user = usuarios.filter(u => u.id == `${user._id}`)[0];
-  console.log(_user);
+  let _user = usuarios.filter(u => u.id == user._id);
+
   if(!_user) {
     usuarios.push({
       id: user._id,
       socketClient: socket,
       usuario: user
     });
+      let ru = usuarios.reduce(u => u.id == user._id);
+    console.log(ru);
     return true;
   }
   usuarios = usuarios.map(u => (u.id == user.id) ? {

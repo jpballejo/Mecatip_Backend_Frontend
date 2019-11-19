@@ -13,6 +13,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from './servicios/user.service';
+import { ModalComponent } from './componentes/modal/modal.component';
+
 
 
 @NgModule({
@@ -22,9 +24,11 @@ import { UserService } from './servicios/user.service';
     NavbarComponent,
     PrivadoPageComponent,
     NotFoundPageComponent,
+  
 
 
   ],
+
   imports: [
     CommonModule,
     BrowserModule,
@@ -34,7 +38,7 @@ import { UserService } from './servicios/user.service';
     ReactiveFormsModule,
     HttpClientModule,
     LibsbootstrapModule,
-
+    NgbModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent],

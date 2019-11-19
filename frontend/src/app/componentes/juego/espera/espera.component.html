@@ -1,39 +1,79 @@
-<div>
-  <div (click)="no()">no usar!!!</div>
-  <table class="table table-striped">
-    <thead>
-      <tr>
 
-        <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores</th>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <button (click)="desafiar()" name="btn desafio" type="button" class="btn btn-danger btn-lg">
+        DESAFIAR
+      </button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let jugador of (socketAPI.listaUserUpdate$ | async)?.usuariosOnline || []" (click)="ponerEnEspera(jugador)">
+            <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores</th>
 
-        <td>
-          <label class="btn-primary" ngbButtonLabel>
-            <input id="{{ jugador }}" type="checkbox" ngbButton>{{ jugador }}
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let jugador of (socketAPI.listaUserUpdate$ | async)?.usuariosOnline || []" (click)="ponerEnEspera(jugador)">
 
-          </label>
-        </td>
-        <td>
-          {{jugador}}
-        </td>
 
-      </tr>
-    </tbody>
-  </table>
+            <td *ngIf="auth.getUser().username!==jugador">
+              <button type="button" class="btn btn-outline-secondary"> {{jugador}}</button>
 
-<table class="table table-striped">
-  <thead>
-      <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores en Espera</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let jugadorEsp of enEspera">
-      <td>{{jugadorEsp}}</td>
+            </td>
 
-    </tr>
-  </tbody>
-</table>
-</div>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-striped">
+        <thead>
+          <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores en Espera</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let jugadorEsp of enEspera">
+            <td>{{jugadorEsp}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+      <div class="restantes">
+
+        <h1 class="display-4">
+          <label for="res">Restantes</label>
+          <p id="res"class="text-danger">
+
+           {{restantes$.value}}
+
+          </p>
+        </h1>
+
+        <button type="button" class="btn btn-success btn-lg" (click)="crearPartida()">
+          LANZAR
+        </button>
+
+      </div>
+    </div>
+
+  </body>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Here I am!
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+</html>

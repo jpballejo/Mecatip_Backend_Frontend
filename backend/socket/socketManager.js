@@ -32,6 +32,7 @@ module.exports = (server) => {
         });
       });
       socket.on('disconnect', () => socketClientesJuego.desconectarCliente(socket.decoded_token.username));
+      mannagerJuego(socket, socketClientesJuego, socketEnEspera, socketSalas);
     }
   });
   chat.on('connection', (socket) => {
@@ -49,8 +50,6 @@ module.exports = (server) => {
         socketClienteschat.desconectarCliente(socket.decoded_token.username)
       });
     }
+    mannagerChat(socket, socketEnEsperaChat, socketClienteschat, socketSalas)
   });
-
-  mannagerJuego(juego, socketClientesJuego, socketEnEspera, socketSalas);
-  mannagerChat(chat, socketEnEsperaChat, socketClienteschat, socketSalas)
 };

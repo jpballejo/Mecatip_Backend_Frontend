@@ -21,6 +21,7 @@ export class SocketChatService {
     this.chat.on('usuario_online', data => this.usuario_online$.next(data));
     this.chat.on('listaUserUpdate', data => this.listaUserUpdate$.next(data));
     this.chat.on('invChat', data => this.invChat$.next(data));
+
   }
 
   emitirCoso() {
@@ -28,4 +29,5 @@ export class SocketChatService {
   }
 
   limpiarSala(idSala) { this.chat.emit('limpiarSala', { idSala: idSala }); }
+  
 }

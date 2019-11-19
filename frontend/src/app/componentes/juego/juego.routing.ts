@@ -4,12 +4,15 @@ import { JuegoComponent } from './juego/juego.component';
 import { ChatComponent } from './chat/chat.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { EsperaComponent } from './espera/espera.component';
+import{JuegoVsComponent} from './juego-vs/juego-vs.component';
 const routes: Routes = [
   { path: "", redirectTo: "principal", pathMatch: "full" },
   { path: "principal", component: PrincipalComponent },
   { path: "juego", component: JuegoComponent },
   { path: "chat", component: ChatComponent },
-  {path: "enespera", component: EsperaComponent}
+  {path: "enespera", component: EsperaComponent},
+  {path: "vs/:idPartida", component: JuegoVsComponent},
+
 
 
 ];
