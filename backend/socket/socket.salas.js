@@ -1,6 +1,8 @@
 console.log('Socket-salas cargado...');
 exports.funcionInit = () => console.log('socket-salas inicio');
-salas = [];
+
+var socketClientes = require('./socket.clientes');
+var salasChat = [];
 validaArray = (array) => {
   if(array != null) {
     return array.length > -1;
@@ -8,9 +10,9 @@ validaArray = (array) => {
   return false;
 }
 ////////////////////////////////////////////////////////////////////////////
-exports.agregarSala = (sala, clientes, tipo, creador) => {
+/*exports.agregarSala = (sala, clientes, tipo, creador) => {
   let sal = salas.filter(s => s.sala == sala);
-  if(!sal) {
+  if(sal) {
     var salaNueva = {
       creador: creador,
       sala: sala,
@@ -85,3 +87,67 @@ exports.sacarDeSala = (username) => {
 }
 /////////////////////////////////////////////////////////////////////////
 exports.getSala = (sala) => salas.filter(sal => sal.sala = sala)[0];
+
+
+*/
+exports.getSalas = () => {  
+  
+ return salasChat;
+
+};
+
+
+//////////////////////////////////////////////////////
+exports.crearSala = (userCreador) => {
+  console.log("llega4");
+  var idSala = utilidades.generarID('Chat');
+  console.log(idSala);
+  //this.agregarSala(idSala, null, 'CHAT', userCreador);
+  //this.conectarASala(userCreador, idSala);
+  this.guardarSala(idSala, userCreador);
+
+
+
+}
+exports.conectarASala = (user, sala) => {
+  console.log("usuario",user);
+  socketClientes.getClienteUsername(user).socketClient.join(sala, () => {
+    chat.to(sala).emit('seConecto', user);
+  });
+}
+
+
+exports.getSalass = () => salasChat.map(s=>s);
+
+
+exports.getSalaPorNombre =(nSala)=>{
+  return salasChat.find(salA => salA.sala == nSala);
+}
+
+exports.guardarSala = (idSala, userAuspiciante) => {
+
+  let salass=salasChat.filter(s => s.idSala == idSala)[0];
+  console.log(salass);
+  if(!salass) {
+    salasChat.push({
+      sala: idSala,
+      creador: userAuspiciante,
+      //clientes: clientes,
+      mensajes: ["Bienvenidos a la sala: "+`${idSala}`]
+    }); 
+    console.log(salasChat);
+    var salA= salasChat.find(salA => salA.sala == idSala)
+  
+
+    socketClientes.getClientesOnlineUsuario().forEach((user) => user.socketClient.emit('darSalas',salA));
+
+  }
+
+};
+exports.getSala = (userCreador) => {
+  return salasChat.forEach((sala) => {
+    if(sala.creador == userCreador) return sala.sala;
+  })
+}
+exports.existeSala = (sala) => salasChat[sala];
+exports.getCreador = (idSala) => salasChat[idSala].creador;
