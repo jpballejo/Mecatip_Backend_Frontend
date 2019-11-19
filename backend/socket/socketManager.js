@@ -32,6 +32,8 @@ module.exports = (server) => {
         });
       });
       socket.on('disconnect', () => socketClientesJuego.desconectarCliente(socket.decoded_token.username));
+      mannagerJuego(socket, socketClientesJuego, socketEnEspera, socketSalas);
+      
     }
   });
   chat.on('connection', (socket) => {
@@ -44,13 +46,19 @@ module.exports = (server) => {
         chat.emit('listaUserUpdate', {
           usuariosOnline: socketClienteschat.getClientesOnline()
         });
+        chat.emit('salasUpdate', {
+          salasChat: socketSalas.getSalas()
+        });
+
       });
       socket.on('disconnect', () => {
         socketClienteschat.desconectarCliente(socket.decoded_token.username)
       });
+      
+      mannagerChat(socket, socketEnEsperaChat, socketClientes, socketSalas);
     }
   });
 
-  mannagerJuego(juego, socketClientesJuego, socketEnEspera, socketSalas);
-  mannagerChat(chat, socketEnEsperaChat, socketClienteschat, socketSalas)
+  
+ 
 };
