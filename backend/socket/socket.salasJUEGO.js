@@ -1,5 +1,6 @@
 console.log('Socket-salas cargado...');
 exports.funcionInit = () => console.log('socket-salas inicio');
+<<<<<<< HEAD:backend/socket/socket.salas.js
 
 var socketClientes = require('./socket.clientes');
 var salasChat = [];
@@ -14,16 +15,28 @@ validaArray = (array) => {
   let sal = salas.filter(s => s.sala == sala);
   if(sal) {
     var salaNueva = {
+=======
+salas = [];
+////////////////////////////////////////////////////////////////////////////
+exports.agregarSala = (idSala, clientes, tipo, creador) => {
+  console.log('agregarSala');
+  console.log('Sala: ', idSala);
+  console.log('salas', salas.length);
+  let sal = salas.filter(s => s.sala == idSala)[0]
+  if(!sal) {
+    let salaNueva = {
+>>>>>>> jpRama:backend/socket/socket.salasJUEGO.js
       creador: creador,
-      sala: sala,
-      clientes: clientes || [],
+      sala: idSala,
+      clientes: clientes,
       tipo: tipo
     }
     salas.push(salaNueva);
+    console.log('Agrego a salas? ', salas.length);
     console.log('Agrege sala: ', salaNueva);
     return salaNueva;
   } else {
-    console.log('Ya existe sala: '+ sal);
+    console.log('Ya existe sala: ' + sal);
     return sal;
   }
 };
@@ -31,6 +44,8 @@ validaArray = (array) => {
 exports.agregarASala = (sala, cliente) => {
   let sal = salas.filter(s => s.sala == sala);
   if(sal) {
+    console.log('sala');
+    console.log(sal);
     let cli = sal.clientes.filter(c => c.id == cliente.usuario._id)[0];
     if(!cli) {
       console.log('Agrege a sala: ', sala);
@@ -44,26 +59,10 @@ exports.agregarASala = (sala, cliente) => {
   return false;
 }
 /////////////////////////////////////////////////////////////////////////
-exports.eliminarSala = (sala) => {
-  let sal = salas.filter(s => s.sala == sala);
-  if(sal) {
-    sal.clientes.forEach((cli) => {
-      cli.socketClient.leave(sala);
-      console.log('Desconecte de sala: ', cli.socketClient);
-    });
-    index = salas.indexOf(sala);
-    console.log('Econtre sala: ', sala, ' en el index: ', index);
-    if(index > -1) {
-      salas.splice(index, 1);
-      console.log('Elimine la sala en el index: ', index);
-      return true;
-    }
-  }
-  return false;
-}
+exports.eliminarSala = (sala) => salas = salas.filter(u => u.sala != sala);
 /////////////////////////////////////////////////////////////////////////
 exports.getClientesSala = (sala) => {
-  let sal = salas.filter(s => s.sala == sala);
+  let sal = salas.filter(s => s.sala == sala)[0];
   if(sal && sal.clientes) {
     console.log('Encontre sala: ', sala, ' clientes en sala: ', sal.clientes);
     return sal.clientes;
@@ -87,6 +86,7 @@ exports.sacarDeSala = (username) => {
 }
 /////////////////////////////////////////////////////////////////////////
 exports.getSala = (sala) => salas.filter(sal => sal.sala = sala)[0];
+<<<<<<< HEAD:backend/socket/socket.salas.js
 
 
 */
@@ -151,3 +151,17 @@ exports.getSala = (userCreador) => {
 }
 exports.existeSala = (sala) => salasChat[sala];
 exports.getCreador = (idSala) => salasChat[idSala].creador;
+=======
+/////////////////////////////////////////////////////////////////////////
+exports.getCLiente = (idSala, username) => {
+  let sal = salas.filter(sal => sal.sala = idSala)[0];
+  if(sal) {
+    let cli = sal.clientes.filter(c => c.ususario.username == username)[0]
+    if(cli) return cli;
+  }
+  return null;
+}
+/////////////////////////////////////////////////////////////////////////
+exports.getSalas = () => salas.map(s => s);
+/////////////////////////////////////////////////////////////////////////
+>>>>>>> jpRama:backend/socket/socket.salasJUEGO.js

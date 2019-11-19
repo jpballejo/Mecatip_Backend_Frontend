@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mecatip</title>
+</head>
+
+<body>
+  <div class="container-fluid" *ngIf="!(nivel$ | async)">
+    <div class="col">
+      <div *ngIf="!CREATOR" class="creator">
+        ESPERANDO AL CREADOR :O
+      </div>
+      <div *ngIf="CREATOR" class="creator">
+        <div class="container">
+          <div class="col">
+            <div class="row">
+              <button type="button" name="button" (click)="arrancar()">
+                <h1>GO!</h1>
+              </button>
+            </div>
+
+            <div class="row">
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-danger" name="button" (click)="dificultad(true)">
+                  <h1>DIFICIL!</h1>
+                </button>
+                <button type="button" class="btn btn-danger" name="button" (click)="dificultad(false)">
+                  <h1>FACIL!</h1>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="nivel" *ngIf="!!(nivel$ | async)">
+    <div *ngIf="(palabrasXlvl$ | async)">
+
+
+      <div class="presentacion">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <h5 class="card-header">Tiempo</h5>
+                <div class="card-body">
+                  <h5 class="card-title"> {{seg$ | async}}</h5>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <h5 class="card-header">Puntaaje</h5>
+                <div class="card-body">
+                  <h5 class="card-title"> {{puntaje}}</h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <h5 class="card-header">Nivel</h5>
+                <div class="card-body">
+                  <h5 class="card-title"> {{nivel$ | async}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h2>{{PALABRA}}</h2>
+          </div>
+          <div class="row">
+            <div class="input-group input-group-lg">
+              <input type="text" [(ngModel)]="escribiendo" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div *ngIf="!(palabrasXlvl$ | async)">
+      cargando nivel2
+    </div>
+    <div class="puntosJugadores" *ngIf="!!arrayPuntajes.length">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Posicion</th>
+            <th scope="col">Puntaje</th>
+            <th scope="col">Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let puntaje of arrayPuntajes; let i=index ">
+            <td>{{1+i}}</td>
+            <td>{{puntaje.puntos}}</td>
+            <td>{{puntaje.jugador.username}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row" *ngIf="CREATOR">
+        <button type="button" class="btn btn-outline-success btn-lg btn-block"  (click)="finPartida()">FINALIZAR</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

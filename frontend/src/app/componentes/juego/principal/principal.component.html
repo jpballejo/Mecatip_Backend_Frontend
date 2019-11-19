@@ -1,32 +1,68 @@
-<div class="contenedorPrincipal">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-  <div class="btn">
-    <div class="btnSingle">
-      <button type="button" name="btnSIM" routerLink="/juego/juego" >SIMPLE</button>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="col">
+      <div class="row">
+        <div class="col"> <button type="button" class="btn btn-danger btn-lg btn-block" name="btnSIM" routerLink="/juego/juego">
+            <h1>SIMPLE</h1>
+          </button>
+          <div class="col"> <button class="btn btn-dark btn-lg btn-block" type="button" routerLink="/juego/enespera" name="btnVS">
+              <h1>VS</h1>
+            </button></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="userOnline">
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Jugadores disponibles</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let jugador of (socketAPI.listaUserUpdate$ | async)?.usuariosOnline || []">
+                  <th *ngIf="auth.getUser().username!==jugador" scope="row">{{ jugador }}</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col">
+          <app-chat></app-chat>
+        </div>
+      </div>
     </div>
-    <div class="btnVs"> <button type="button" routerLink="/juego/enespera" name="btnVS">VS</button></div>
   </div>
-  <div class="chat">
-    <app-chat></app-chat>
-    <div class="userOnline">
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col">Jugadores disponibles</th>
 
+  <ng-template #modal let-modal>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let jugador of jugadores; index as i">
-          <th scope="row">{{ jugador.name }}</th>
-
-
-        </tr>
-        </tbody>
-      </table>
+    <div class="modal-header" #modal>
+      <h4 class="modal-title">{{my_modal_title}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </div>
+    <div class="modal-body">
+      <p> {{my_modal_content}}</p>
+    </div>
+    <div class="modal-footer">
+
+      <button type="button" class="btn btn-outline-dark" (click)="aceptoDesafio(false)">Cancelar</button>
+      <button type="button" class="btn btn-outline-dark" (click)="aceptoDesafio(true)">Aceptar</button>
 
 
-</div>
+    </div>
+  </ng-template>
+
+
+</body>
+
+</html>

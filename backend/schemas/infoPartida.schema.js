@@ -8,13 +8,10 @@ var infoPartida = new Schema({
     type: String,
     index: true
   },
-  contrincante: { //link con el jugadorSchema.Types.Mixed,
+  contrincantes: [String],
+  idPartida: {
     type: String,
-    //  ref: 'usuario'
-  },
-  idPartida: { //link con la partida Schema.Types.Mixed
-    type: String,
-    //   ref: 'partida'
+
   },
   puntos_ganados: {
     type: Number,
@@ -40,7 +37,7 @@ var infoPartida = new Schema({
   isOcultar: {
     type: Boolean,
     default: false
-  }, //este campo es para el borrado logico
+  },
   jugada: {
     type: Boolean,
     default: false

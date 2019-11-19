@@ -5,7 +5,7 @@ module.exports = (server) => {
   var socketSJWT = require('./socket.validacion.SJWT');
   let socketClientes = require('./socket.clientes');
   let socketEnEspera = require('./socket.enEspera');
-  let socketSalas = require('./socket.salas');
+  let socketSalasJuego = require('./socket.salasJUEGO');
   let mannagerJuego = require('./socket.juego');
   let mannagerChat = require('./socket.chat');
   let socketEnEsperaChat = require('./socket.enEsperaChat');
@@ -32,8 +32,12 @@ module.exports = (server) => {
         });
       });
       socket.on('disconnect', () => socketClientesJuego.desconectarCliente(socket.decoded_token.username));
+<<<<<<< HEAD
       mannagerJuego(socket, socketClientesJuego, socketEnEspera, socketSalas);
       
+=======
+      mannagerJuego(socket, socketClientesJuego, socketEnEspera, socketSalasJuego);
+>>>>>>> jpRama
     }
   });
   chat.on('connection', (socket) => {
@@ -57,8 +61,12 @@ module.exports = (server) => {
       
       mannagerChat(socket, socketEnEsperaChat, socketClientes, socketSalas);
     }
+    mannagerChat(socket, socketEnEsperaChat, socketClienteschat, socketSalas)
   });
+<<<<<<< HEAD
 
   
  
+=======
+>>>>>>> jpRama
 };

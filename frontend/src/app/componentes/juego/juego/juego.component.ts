@@ -230,7 +230,7 @@ export class JuegoComponent implements OnInit {
             this.FinalizarTemporizador();
           }
         } else {
-          //No ingreso la palabra correcta pero la funcion checkeaLetra() va a Mostrar el Error
+
         }
       }
     }

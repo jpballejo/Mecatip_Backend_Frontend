@@ -127,8 +127,6 @@ exports.crearInfoPartida = async (req, res, next) => {
   var idInfoPartida = 'InfoPartida:_' + `${req.user.username}` + '_' + idAuto;
   var infoPartida = new InfoPartida(req.body);
   infoPartida.idInfoPartida = idInfoPartida;
-  infoPartida.contrincante = req.body.idJugador;
-  infoPartida.idPartida = req.body.idPartida;
   infoPartida.save().then((infoPartida) => {
     if(infoPartida) {
       Usuario.findOne({
@@ -150,6 +148,10 @@ exports.crearInfoPartida = async (req, res, next) => {
   });
   return;
 };
+exports.crearInfosPartidas = (req, res, next) => {
+
+
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***modificarInfoPartidaById***//////////////////////////////////////////////////////
 exports.modificarInfoPartidaById = (req, res, next) => {
@@ -207,7 +209,6 @@ exports.getinfoPartidas = (req, res, next) => {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////***getInfosPartidaByIdPartida***//////////////////////////////////////////////////////
 exports.getInfosPartidaByIdPartida = (req, res, next) => {
-
   InfoPartida.find({
     idPartida: req.param.idPartida
   }).where({

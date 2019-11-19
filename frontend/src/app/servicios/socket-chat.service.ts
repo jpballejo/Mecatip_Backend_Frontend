@@ -25,6 +25,7 @@ export class SocketChatService {
     this.chat.on('listaUserUpdate', data => this.listaUserUpdate$.next(data));
     this.chat.on('salasUpdate', data => this.salasUpdate$.next(data));
     this.chat.on('invChat', data => this.invChat$.next(data));
+
   }
 
   emitirCoso() {
@@ -32,6 +33,7 @@ export class SocketChatService {
   }
 
   limpiarSala(idSala) { this.chat.emit('limpiarSala', { idSala: idSala }); }
+<<<<<<< HEAD
 
   crearSala(userCreator) { 
     this.chat.emit('crearSala', { userCreator: userCreator });
@@ -60,6 +62,9 @@ export class SocketChatService {
             observer.next(message);
         });
     });
+=======
+  
+>>>>>>> jpRama
 }
 
 

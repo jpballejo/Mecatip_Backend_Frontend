@@ -3,11 +3,45 @@ module.exports = (chat, socketEnEsperaChat, socketClientes, socketSalas) => {
   var soketSalas = require('./socket.salas');
 
   salasChat = [];
+<<<<<<< HEAD
   var notificarSalaDeChat = (usuarios, userAuspiciante) => {}
   usuarios.forEach((user) => {
 //    socketEnEsperaChat.getClienteUsername(user).socketClient.emit('invChat', userAuspiciante);
   });
  
+=======
+  var notificarSalaDeChat = (usuarios, userAuspiciante) => {
+    usuarios.forEach((user) => {
+      this.socketEnEsperaChat.getClienteUsername(user).socketClient.emit('invChat', userAuspiciante);
+    });
+  }
+  var crearSala = (userCreador) => {
+    var idSala = utilidades.generarID('Chat');
+    socketSalas.agregarSala(idSala, null, 'CHAT', userCreador);
+    conectarASala(userCreador, sala);
+    guardarSala(idSala, userCreador);
+  }
+  var conectarASala = (user, sala) => {
+    this.socketClient.getClienteUsername(user).socketClient.join(sala, () => {
+      chat.to(sala).emit('seConecto', user);
+    });
+  }
+  var guardarSala = (idSala, userAuspiciante) => {
+    if(!this.salasChat[idSala]) {
+      this.salasChat[idSala] = {
+        sala: idSala,
+        creador: userAuspiciante
+      }
+    }
+  };
+  var getSala = (userCreador) => {
+    return this.salasChat.forEach((sala) => {
+      if(sala.creador == userCreador) return sala.sala;
+    })
+  }
+  var existeSala = (sala) => this.salasChat[sala];
+  var getCreador = (idSala) => this.salasChat[idSala].creador;
+>>>>>>> jpRama
   //***************************************************************************//
   
   
@@ -96,6 +130,7 @@ module.exports = (chat, socketEnEsperaChat, socketClientes, socketSalas) => {
     }
   });
 
+<<<<<<< HEAD
  chat.on('crearSala', (userCreador) => {
     console.log("llega3");
     console.log(userCreador.userCreator);
@@ -119,4 +154,6 @@ module.exports = (chat, socketEnEsperaChat, socketClientes, socketSalas) => {
 
 
 
+=======
+>>>>>>> jpRama
 }

@@ -1,6 +1,1116 @@
 [
  {
-  "palabra_frase": "",
+  "palabra_frase": "sistema operativo",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "correr rápido",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tecnólogo informático",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "ahora termino",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "estoy hambriento",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "estoy cansado",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "usar zapatos",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "uso remera",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "uso chaqueta",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "bien vestido",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "jugar tenis",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "jugar fútbol",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "hacer ejercicio",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "hacer maraton",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tengo abuelos",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tengo familia",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tengo hijos",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tengo madre",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tengo padre",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "soy mujer",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "soy hombre",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "muchas gracias",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tiene enemigos",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tiene amigos",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "tiene esperanza",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "algo paso",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "actitud negativa",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "actitud positiva",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "soy extrovertido",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "soy introvertido",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "eres amigable",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "eres arrogante",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "eres especial",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "que inteligente",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "que feo",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "que hermosura",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "como estas",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "todo bien",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "gran estrategia",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buena defensa",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buen ataque",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "quiero torta",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "cerveza helada",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "auto limpio",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "lindo día",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "ayuda porfavor",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "que paso",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "bien hecho",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buen chico",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "gran apetito",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "gran trabajo",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buen provecho",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "jugemos ahora",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "vamos juntos",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buen provecho",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buenas noches",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buenas tardes",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "hola pepe",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "feliz día",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "buenos días",
+  "significado": "",
+  "nivel": 9
+ },
+ {
+  "palabra_frase": "unidireccional",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "turísticamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "trabajosamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "simbólicamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "significativas",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "subconsciencia",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "subcontratados",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "sobreactuacion",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "simétricamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "simpáticamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "relampagueando",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "rejuveneciendo",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "redescubriendo",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "reabastecimiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "razonablemente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "radioeléctrico",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "reagravamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "quiropracticas",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "quebrantamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "explicitamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "planificación",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "incapacitación",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "impersonalidad",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "ilimitadamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "ilegitimamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "hidromecanismos",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "nitroglicerina",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "harmonizadores",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "abandonamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "galvanizadores",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "generalización",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "glorificadoras",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "funcionamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "fraternalmente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "flexibilizando",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "ferrocarrilero",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "exageradamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "evangelización",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "ejemplarizando",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "edulcoramiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "documentadores",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "dramáticamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "administración",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "administrativo",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "debilitamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "cinematografía",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "bonificaciones",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "burocratizando",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "apaciguamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "antidepresivos",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "analgicamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "autobiografía",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "autoevaluación",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "autosacrificio",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "insuficiencias",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "autentificación",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "apalancamiento",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "analíticamente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "suficientemente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "evidentemente",
+  "significado": "",
+  "nivel": 8
+ },
+ {
+  "palabra_frase": "desmantelación",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "momentaniamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "vocalización",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "victimización",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "viceprovincia",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "vicealmirante",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "vegetabilidad",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ultralivianos",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ultravioleta",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "imposibilidad",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ridiculizando",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "robotizacion",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "abastecimiento",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "reaccionando",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "radioactividad",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "policlinicas",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "planteamiento",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "opresivamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "optimizaciones",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ordenadamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ofensivamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ultimamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "radicalidades",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "aquebrantado",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "nutricionista",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "nutricionales",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "narcotrafico",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "modernamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "minisubmarino",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "miniparticula",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "lubricantes",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "megafortaleza",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "juramentados",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "irreconocible",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "imparcialidad",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "inapreciables",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "inadvertencia",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "imaginaciones",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "guardaespalda",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "conversacion",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "gráficamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "ejemplificado",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "economistas",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "racionalmente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "objectivamente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "nacionalizado",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "identificador",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "gratificante",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "desconcertado",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "habitualmente",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "estilización",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "duplicariamos",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "durabilidades",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "creatividades",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "cicatrización",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "desesperación",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "aromatizantes",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "alucinaciones",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "desconcertado",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "bachillerato",
+  "significado": "",
+  "nivel": 7
+ },
+ {
+  "palabra_frase": "irradiación",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "irrazonable",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "inactividad",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "identificado",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "hibernación",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "habilitando",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "habilidades",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "exageración",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "exactamente",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "elaboradora",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "efectividad",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "entrevistas",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "editoriales",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "edificación",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "eclosionado",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "ecografias",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "dudosamente",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "doblegables",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "doblamiento",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "diabetologo",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "deambulaban",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "cooperación",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "blanqueador",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "bicarbonato",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "ayuntamiento",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "damnificado",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "apabullante",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "amablemente",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "alabamiento",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "damnificado",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "fotosíntesis",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "mecanografía",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "microsegundos",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "nanosegundos",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "nanoparasito",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "mercadotecnia",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "enciclopedia",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "subestructura",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "cucuruchon",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "investigador",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "laboratorios",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "mecatronica",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "indispensable",
   "significado": "",
   "nivel": 6
  },
@@ -25,7 +1135,7 @@
   "nivel": 6
  },
  {
-  "palabra_frase": "indispensable",
+  "palabra_frase": "metabolismo",
   "significado": "",
   "nivel": 6
  },
@@ -40,42 +1150,27 @@
   "nivel": 6
  },
  {
-  "palabra_frase": "programacion",
+  "palabra_frase": "programación",
   "significado": "",
   "nivel": 6
  },
  {
-  "palabra_frase": "enfermerias",
+  "palabra_frase": "enfermerías",
   "significado": "",
   "nivel": 6
  },
  {
-  "palabra_frase": "helicoptero",
+  "palabra_frase": "helicóptero",
   "significado": "",
   "nivel": 6
  },
  {
-  "palabra_frase": "mecatronica",
+  "palabra_frase": "paleontología",
   "significado": "",
   "nivel": 6
  },
  {
-  "palabra_frase": "paleontologia",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "laboratorios",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "civilizacion",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "investigador",
+  "palabra_frase": "civilización",
   "significado": "",
   "nivel": 6
  },
@@ -85,17 +1180,7 @@
   "nivel": 6
  },
  {
-  "palabra_frase": "cucuruchon",
-  "significado": "",
-  "nivel": 6
- },
- {
   "palabra_frase": "efectivamente",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "subestructura",
   "significado": "",
   "nivel": 6
  },
@@ -105,7 +1190,12 @@
   "nivel": 6
  },
  {
-  "palabra_frase": "enciclopedia",
+  "palabra_frase": "aristocracia",
+  "significado": "",
+  "nivel": 6
+ },
+ {
+  "palabra_frase": "mentalización",
   "significado": "",
   "nivel": 6
  },
@@ -115,47 +1205,147 @@
   "nivel": 6
  },
  {
-  "palabra_frase": "mercadotecnia",
-  "significado": "",
-  "nivel": 6
- },
- {
   "palabra_frase": "mentalizacion",
   "significado": "",
   "nivel": 6
  },
  {
-  "palabra_frase": "nanoparasito",
+  "palabra_frase": "burocratas",
   "significado": "",
-  "nivel": 6
+  "nivel": 5
  },
  {
-  "palabra_frase": "mecanografia",
+  "palabra_frase": "maquinaria",
   "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "nanosegundos",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "microsegundos",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "metabolismo",
-  "significado": "",
-  "nivel": 6
- },
- {
-  "palabra_frase": "fotosintesis",
-  "significado": "",
-  "nivel": 6
+  "nivel": 5
  },
  {
   "palabra_frase": "masajeador",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "lubricante",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "dependiente",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "intendente",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "presidente",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "legislativo",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "igualdades",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "inadaptado",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "festividad",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "literatura",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "suficiente",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "inadecuado",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "impermeable",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "ignorantes",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "fermentado",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "chocolates",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "sagitario",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "capricornio",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "topologias",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "computacion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "gobernante",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "fulmigacion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "evacuacion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "ergonomico",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "emanacion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "electrodos",
   "significado": "",
   "nivel": 5
  },
@@ -175,7 +1365,7 @@
   "nivel": 5
  },
  {
-  "palabra_frase": "electrodos",
+  "palabra_frase": "brasaletes",
   "significado": "",
   "nivel": 5
  },
@@ -205,17 +1395,7 @@
   "nivel": 5
  },
  {
-  "palabra_frase": "emanacion",
-  "significado": "",
-  "nivel": 5
- },
- {
   "palabra_frase": "australiano",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "ergonomico",
   "significado": "",
   "nivel": 5
  },
@@ -225,17 +1405,7 @@
   "nivel": 5
  },
  {
-  "palabra_frase": "evacuacion",
-  "significado": "",
-  "nivel": 5
- },
- {
   "palabra_frase": "comandante",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "fulmigacion",
   "significado": "",
   "nivel": 5
  },
@@ -245,17 +1415,7 @@
   "nivel": 5
  },
  {
-  "palabra_frase": "gobernante",
-  "significado": "",
-  "nivel": 5
- },
- {
   "palabra_frase": "acercarse",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "computacion",
   "significado": "",
   "nivel": 5
  },
@@ -265,187 +1425,7 @@
   "nivel": 5
  },
  {
-  "palabra_frase": "topologias",
-  "significado": "",
-  "nivel": 5
- },
- {
   "palabra_frase": "jardineras",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "capricornio",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "burocratas",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "sagitario",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "xenofobia",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "chocolates",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "ubicaciones",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "maquinaria",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "memorizar",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "ignorantes",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "identificar",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "impermeable",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "personales",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "inadecuado",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "relaciones",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "suficiente",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "democracia",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "literatura",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "humillacion",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "festividad",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "destruccion",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "inadaptado",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "demolicion",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "igualdades",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "ebullicion",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "legislativo",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "daltonismo",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "presidente",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "cabalgando",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "intendente",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "estudiante",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "dependiente",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "estudiante",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "lubricante",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "fermentado",
-  "significado": "",
-  "nivel": 5
- },
- {
-  "palabra_frase": "brasaletes",
   "significado": "",
   "nivel": 5
  },
@@ -455,7 +1435,207 @@
   "nivel": 5
  },
  {
+  "palabra_frase": "xenofobia",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "ubicaciones",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "memorizar",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "identificar",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "personales",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "relaciones",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "democracia",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "humillacion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "destruccion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "demolicion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "ebullicion",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "daltonismo",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "cabalgando",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "estudiante",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "estudiante",
+  "significado": "",
+  "nivel": 5
+ },
+ {
+  "palabra_frase": "operativo",
+  "significado": "",
+  "nivel": 4
+ },
+ {
   "palabra_frase": "fortaleza",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "romantico",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "necesidad",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "mecanizar",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "localidad",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "jerarquia",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "jengibre",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "italiano",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "ionosfera",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "ilimitado",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "divinidad",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "inmortal",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "teocracia",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "idealismo",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "aguacate",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "hibernar",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "habilidad",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "habilitar",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "dragones",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "jengibre",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "remolacha",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "grabacion",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "gobierno",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "glaciares",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "gladiador",
   "significado": "",
   "nivel": 4
  },
@@ -470,6 +1650,16 @@
   "nivel": 4
  },
  {
+  "palabra_frase": "asteroide",
+  "significado": "",
+  "nivel": 4
+ },
+ {
+  "palabra_frase": "terremoto",
+  "significado": "",
+  "nivel": 4
+ },
+ {
   "palabra_frase": "llamarada",
   "significado": "",
   "nivel": 4
@@ -480,7 +1670,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "gladiador",
+  "palabra_frase": "infeccion",
   "significado": "",
   "nivel": 4
  },
@@ -510,17 +1700,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "glaciares",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "equilibrio",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "gobierno",
   "significado": "",
   "nivel": 4
  },
@@ -530,17 +1710,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "grabacion",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "ejercicio",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "remolacha",
   "significado": "",
   "nivel": 4
  },
@@ -550,17 +1720,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "jengibre",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "profesor",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "dragones",
   "significado": "",
   "nivel": 4
  },
@@ -570,17 +1730,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "habilitar",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "ejercito",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "habilidad",
   "significado": "",
   "nivel": 4
  },
@@ -590,17 +1740,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "hibernar",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "proyecto",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "aguacate",
   "significado": "",
   "nivel": 4
  },
@@ -610,17 +1750,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "operativo",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "armadura",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "teocracia",
   "significado": "",
   "nivel": 4
  },
@@ -630,17 +1760,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "inmortal",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "groseria",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "divinidad",
   "significado": "",
   "nivel": 4
  },
@@ -650,27 +1770,12 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "ilimitado",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "cabalgata",
   "significado": "",
   "nivel": 4
  },
  {
-  "palabra_frase": "ionosfera",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "proyecto",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "italiano",
   "significado": "",
   "nivel": 4
  },
@@ -680,17 +1785,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "jengibre",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "matematica",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "jerarquia",
   "significado": "",
   "nivel": 4
  },
@@ -700,17 +1795,7 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "localidad",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "aventura",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "mecanizar",
   "significado": "",
   "nivel": 4
  },
@@ -720,42 +1805,12 @@
   "nivel": 4
  },
  {
-  "palabra_frase": "necesidad",
-  "significado": "",
-  "nivel": 4
- },
- {
   "palabra_frase": "proyecto",
   "significado": "",
   "nivel": 4
  },
  {
-  "palabra_frase": "romantico",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "asteroide",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "infeccion",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "terremoto",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "idealismo",
-  "significado": "",
-  "nivel": 4
- },
- {
-  "palabra_frase": "privado",
+  "palabra_frase": "nublado",
   "significado": "",
   "nivel": 3
  },
@@ -765,7 +1820,142 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "nublado",
+  "palabra_frase": "privado",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "publico",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "empresa",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "trabajo",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "notebook",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "ketchup",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "chivito",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "milanesa",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "diamante",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "brilloso",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "platino",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "algodon",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "semilla",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "naranja",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "recuerdo",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "memoria",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "caliente",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "quimica",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "materia",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "credito",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "tarjeta",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "alcohol",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "disolver",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "perfecto",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "androide",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "maquina",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "uruguay",
+  "significado": "",
+  "nivel": 3
+ },
+ {
+  "palabra_frase": "empatar",
   "significado": "",
   "nivel": 3
  },
@@ -775,7 +1965,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "publico",
+  "palabra_frase": "campeon",
   "significado": "",
   "nivel": 3
  },
@@ -805,17 +1995,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "empresa",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "politica",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "trabajo",
   "significado": "",
   "nivel": 3
  },
@@ -825,17 +2005,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "notebook",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "tribuna",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "ketchup",
   "significado": "",
   "nivel": 3
  },
@@ -845,17 +2015,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "chivito",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "edificio",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "milanesa",
   "significado": "",
   "nivel": 3
  },
@@ -865,17 +2025,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "diamante",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "celular",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "brilloso",
   "significado": "",
   "nivel": 3
  },
@@ -885,17 +2035,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "platino",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "control",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "algodon",
   "significado": "",
   "nivel": 3
  },
@@ -905,17 +2045,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "empatar",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "mousepad",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "naranja",
   "significado": "",
   "nivel": 3
  },
@@ -925,17 +2055,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "recuerdo",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "teclado",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "memoria",
   "significado": "",
   "nivel": 3
  },
@@ -945,17 +2065,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "caliente",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "cerveza",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "quimica",
   "significado": "",
   "nivel": 3
  },
@@ -965,17 +2075,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "materia",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "verano",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "credito",
   "significado": "",
   "nivel": 3
  },
@@ -985,17 +2085,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "tarjeta",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "manzana",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "alcohol",
   "significado": "",
   "nivel": 3
  },
@@ -1005,17 +2095,7 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "disolver",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "condenar",
-  "significado": "",
-  "nivel": 3
- },
- {
-  "palabra_frase": "perfecto",
   "significado": "",
   "nivel": 3
  },
@@ -1025,37 +2105,142 @@
   "nivel": 3
  },
  {
-  "palabra_frase": "androide",
-  "significado": "",
-  "nivel": 3
- },
- {
   "palabra_frase": "mantener",
   "significado": "",
   "nivel": 3
  },
  {
-  "palabra_frase": "maquina",
+  "palabra_frase": "burla",
   "significado": "",
-  "nivel": 3
+  "nivel": 2
  },
  {
-  "palabra_frase": "uruguay",
+  "palabra_frase": "media",
   "significado": "",
-  "nivel": 3
+  "nivel": 2
  },
  {
-  "palabra_frase": "campeon",
+  "palabra_frase": "zapato",
   "significado": "",
-  "nivel": 3
+  "nivel": 2
  },
  {
-  "palabra_frase": "semilla",
+  "palabra_frase": "lindo",
   "significado": "",
-  "nivel": 3
+  "nivel": 2
  },
  {
-  "palabra_frase": "fruta",
+  "palabra_frase": "tanque",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "timido",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "pesado",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "ancho",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "corto",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "largo",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "fresa",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "indice",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "zorro",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "mouse",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "otoño",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "robado",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "musica",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "tecla",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "raton",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "punto",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "codigo",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "helado",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "cacao",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "menta",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "cereza",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "wisky",
+  "significado": "",
+  "nivel": 2
+ },
+ {
+  "palabra_frase": "pajaro",
   "significado": "",
   "nivel": 2
  },
@@ -1075,7 +2260,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "pajaro",
+  "palabra_frase": "letra",
   "significado": "",
   "nivel": 2
  },
@@ -1105,17 +2290,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "wisky",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "elite",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "cereza",
   "significado": "",
   "nivel": 2
  },
@@ -1125,17 +2300,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "menta",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "brazo",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "cacao",
   "significado": "",
   "nivel": 2
  },
@@ -1145,17 +2310,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "helado",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "comer",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "codigo",
   "significado": "",
   "nivel": 2
  },
@@ -1165,17 +2320,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "punto",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "adios",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "raton",
   "significado": "",
   "nivel": 2
  },
@@ -1185,17 +2330,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "tecla",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "pierna",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "musica",
   "significado": "",
   "nivel": 2
  },
@@ -1205,17 +2340,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "robado",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "hacer",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "otoño",
   "significado": "",
   "nivel": 2
  },
@@ -1225,17 +2350,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "mouse",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "llorar",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "zorro",
   "significado": "",
   "nivel": 2
  },
@@ -1245,17 +2360,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "indice",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "dolor",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "fresa",
   "significado": "",
   "nivel": 2
  },
@@ -1265,17 +2370,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "largo",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "llama",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "corto",
   "significado": "",
   "nivel": 2
  },
@@ -1285,17 +2380,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "ancho",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "termo",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "pesado",
   "significado": "",
   "nivel": 2
  },
@@ -1305,17 +2390,7 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "timido",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "tarde",
-  "significado": "",
-  "nivel": 2
- },
- {
-  "palabra_frase": "tanque",
   "significado": "",
   "nivel": 2
  },
@@ -1325,37 +2400,1037 @@
   "nivel": 2
  },
  {
-  "palabra_frase": "lindo",
-  "significado": "",
-  "nivel": 2
- },
- {
   "palabra_frase": "banana",
   "significado": "",
   "nivel": 2
  },
  {
-  "palabra_frase": "zapato",
+  "palabra_frase": "fruta",
   "significado": "",
   "nivel": 2
  },
  {
-  "palabra_frase": "media",
+  "palabra_frase": "normalmente escucho musica para estudiar, no me gusta el silencio",
   "significado": "",
-  "nivel": 2
+  "nivel": 12
  },
  {
-  "palabra_frase": "letra",
+  "palabra_frase": "lo siento si te ofendí a ti, mi intención era ofenderlos a todos",
   "significado": "",
-  "nivel": 2
+  "nivel": 12
  },
  {
-  "palabra_frase": "burla",
+  "palabra_frase": "esta noticia es demasiado cómica, hazla más profesional",
   "significado": "",
-  "nivel": 2
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "despues de comer, me tengo que examinar el azucar en sangre",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "hacer ejercicio es bueno para la salud",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "vamos a repartir los casos de uso de manera equitatíva",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "Aqui vamos denuevo, lunes otra vez",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "no tengo ganas de estudiar,ya es viernes de noche",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "ya estamos en noviembre, un ultimo esfuerzo",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "la carrera de tecnólogo en informática consta de 6 semestres",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "hay que rendir 5 materias por semestre",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mi disco dura se esta llendando, nesesito limpiarlo",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mi equipo esta andando lento, nesesito mejorarlo",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mi teclado no tiene teclado numerico",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "nesesito un mouse, el touchpad de la notebook no me gusta",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "llegaron los componentes, voy a armar mi nueva computadora",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "esta fresco afuera, mejor abrigate antes de salir",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "voy a ver una maraton de anime",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "se me acabo la batería de la notebook",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "nesesito un procesador mejor para android studio",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "necesito tiempo libre, tengo mucho trabajo",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "ya no hay mas nada que hacer",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "quiero helado de chocolate para el postre",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "ya estoy cansado de correr tanto",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "agregar columnas a la base de datos",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mañana sin falta traigo mi parte del trabajo",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "el puntero del mouse esta fallando",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "las teclas del teclado no me andan",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mas tarde seguire con este trabajo",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "este código es dificil, voy a pedir ayuda",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "ya son las 4 de la mañana, voy a dormir",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "ya son las 9, es la hora de despertar",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "me voy a ir a mirar una película",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "tenemos 4 meses para terminar el proyecto",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "vamos a dar un paseo por la plaza",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "hacer una aplicación basada en medicina",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mañana tengo que empezar la pasantía",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "tengo que estudiar para matemática",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "no uses el celular en el auto",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "me voy a levantar temprano para terminar el laboratorio",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "la semana que viene es la semana de parciales",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "gente, hoy tenemos el segundo sprint",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "haz hecho un buen trabajo, muchas gracias",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "solo queda 1 mes para que el semestre termine",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "existen varios lenguajes de programación ,como java y php",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "Dos lineas de código, y el programa no compila",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "nesesito una imagen de instalación de windows",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "diagrama de secuencia del sistema",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "tienen 2 semanas para arreglar los errores y reentregar",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "hay que crear una nueva maquina virtual",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "la documentación esta mal, muchas palabras repetidas",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "organizen la comida de fin de año",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "vamos a juntarnos para estudiar para el examen",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "vamos a descansar, tomemos unos mates",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mi monitor tiene algunos pixeles muertos",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "mi computadora esta haciendo sonidos raros",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "hoy no puedo jugar, tengo que programar",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "eso va en contra de los requerimientos establecidos",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "bienvenido, en que lo podemos ayudar",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "hola, buenas tardes, me gustaria saber si me pueden hacer un software",
+  "significado": "",
+  "nivel": 12
+ },
+ {
+  "palabra_frase": "llego la hora de negociar",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "pero, me faltan 2 puntos",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "perdon, hoy tengo que faltar",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "vestirse formal para la presentación",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "ahora no puedo, estoy programando",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "estoy tomandome un descanso",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "no me inicia la computadora",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "tengo un archivo malicioso",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "recibí un ataque ddos",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "poner en practica el aprendizaje",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "aprovechar las oportinudades laborales",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "trabajo con inteligencia artificial",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "incorporar tecnologías a la aplicación",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "investigación de una tecnología",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "con esto ustedes reprueban",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "la infeccin de ha exparcido",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "iluminación rgb para la computadora",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "servidor de archivos en windows",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "desfragmentación de disco duro",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "gama de colores del monitor",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "webservice de la aplicación",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "navegador de google chrome",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "consola de comandos en windows",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "generar peticiones en postman",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "dormirse a las 5am",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "universidad tecnológica del uruguay",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "como esta el día",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "optimización del tiempo en programación",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "trafico de una red",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "disco de estado sólido",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "ciclos de un disco duro",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "chipset de placa madre",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "donde esta mi equipo",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "mantenimiento de los componentes",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "manejo de los cables",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "proceso en segundo plano",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "memoria cache del procesador",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "transistores de un procesador",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "montaje de discos en raid",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "sistema de almacenamiento de archivos",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "manejo de peticiones http",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "materias de cada semestre",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "materia de pasantía laboral",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "montar una maquina virtual",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "comida de fin de año",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "presentación final de proyecto",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "quedara para trabajo futuro",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "se me fue de las manos",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "voy a preparar comida",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "estructura de la aplicación",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "semana de parciales finales",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "fecha para la reentrega",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "vamos a jugar fútbol",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "alta cohesion bajo acoplamiento",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "fundamentos de la programación",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "matemática discreta y lógica",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "comunicación oral y escrita",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "relaciones personales y laborales",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "sistema de nombres de dominio",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "estructura de datos y algoritmos",
+  "significado": "",
+  "nivel": 11
+ },
+ {
+  "palabra_frase": "algoritmo de ordenamiento",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "orientado a objectos",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "casos de uso",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "monitoreo de programación",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "tomar un mate",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "orientar al estudiante",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "ejercicio de matematica",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "sistema de grafos",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "teorema de valles",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "el suceso seguro",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "campana de gauss",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "documentación de proyecto",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "maquina virtual debian",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "limpieza de windows",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "mantenimiento de computadora",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "redes de computadoras",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "modelo vista controlador",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "sobrecarga de información",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "denegación de servicio",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "tarjeta de video",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "monton de chatarra",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "trabajo en equipo",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "reunion de equipo",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "enviando un correo",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "instalando maquina virtual",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "maraton de serie",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "compilando y fallando",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "compilando un programa",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "escribiendo un script",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "diseñando una página",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "creando un archivo",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "semana de parciales",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "programando en java",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "durmiendo en cama",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "programacion de aplicaciones",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "bebiendo una cerveza",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "trabajando en informática",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "caminando a trabajar",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "estudiando para recibirme",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "viendo el horizonte",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "mirando una pelicula",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "vamos a jugar",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "que esta pasando",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "jugar al fútbol",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "maquina de escribir",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "eso esta facil",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "que estas mirando",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "bailar con música",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "hice un descubrimiento",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "ensalada de frutas",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "cafe con leche",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "base de datos",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "aprender a emprender",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "administracion de infraestructuras",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "veamos una pelicula",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "nos vemos mañana",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "hace mucho calor",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "hace mucho frio",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "no tengo comida",
+  "significado": "",
+  "nivel": 10
+ },
+ {
+  "palabra_frase": "hola, buen día",
+  "significado": "",
+  "nivel": 10
  },
  {
   "palabra_frase": "arma",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "arco",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "coco",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "nuez",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "pera",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "pie",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "hijo",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "mama",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "papa",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "agua",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "moto",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "auto",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "rima",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "vaca",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "ella",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "mate",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "coma",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "peor",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "sola",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "golf",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "pool",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "gol",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "joya",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "rojo",
+  "significado": "",
+  "nivel": 1
+ },
+ {
+  "palabra_frase": "lila",
   "significado": "",
   "nivel": 1
  },
@@ -1380,7 +3455,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "lila",
+  "palabra_frase": "hora",
   "significado": "",
   "nivel": 1
  },
@@ -1410,17 +3485,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "rojo",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "ropa",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "joya",
   "significado": "",
   "nivel": 1
  },
@@ -1430,17 +3495,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "gol",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "doce",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "pool",
   "significado": "",
   "nivel": 1
  },
@@ -1450,17 +3505,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "golf",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "diez",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "sola",
   "significado": "",
   "nivel": 1
  },
@@ -1470,17 +3515,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "peor",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "seis",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "coma",
   "significado": "",
   "nivel": 1
  },
@@ -1490,17 +3525,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "mate",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "dos",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "ella",
   "significado": "",
   "nivel": 1
  },
@@ -1510,17 +3535,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "vaca",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "mano",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "rima",
   "significado": "",
   "nivel": 1
  },
@@ -1530,17 +3545,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "auto",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "boca",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "moto",
   "significado": "",
   "nivel": 1
  },
@@ -1550,17 +3555,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "agua",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "dios",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "papa",
   "significado": "",
   "nivel": 1
  },
@@ -1570,17 +3565,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "mama",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "pez",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "hijo",
   "significado": "",
   "nivel": 1
  },
@@ -1590,17 +3575,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "pie",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "oso",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "pera",
   "significado": "",
   "nivel": 1
  },
@@ -1610,17 +3585,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "nuez",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "gato",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "coco",
   "significado": "",
   "nivel": 1
  },
@@ -1630,17 +3595,7 @@
   "nivel": 1
  },
  {
-  "palabra_frase": "arco",
-  "significado": "",
-  "nivel": 1
- },
- {
   "palabra_frase": "eso",
-  "significado": "",
-  "nivel": 1
- },
- {
-  "palabra_frase": "hora",
   "significado": "",
   "nivel": 1
  },
@@ -1651,7 +3606,6 @@
  },
  {
   "palabra_frase": "hola",
-  "significado": "",
   "nivel": 1
  }
 ]

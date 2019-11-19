@@ -22,6 +22,7 @@ exports.meterEnEspera = (userAuspiciante, username) => {
 };
 exports.verificarEspera = (userAuspiciante, userInvitado) => {
   let esp = aEspera.filter(c => c.usuarioAuspiciante == userAuspiciante)[0];
+  console.log(esp);
   return esp.invitados.includes(userInvitado);
 }
 exports.sacarDeEspera = (userAuspiciante, userInvitado) => {

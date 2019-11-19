@@ -26,8 +26,8 @@ export class AuthService {
     localStorage.setItem('ACCESS_TOKEN', token);
     this.token = token
     this.token$.next(token);
-    this.setHeaders();
     console.log('Seteo token');
+    this.setHeaders();
   }
   /////////////////////****************************************************************////////////////
   public getToken(): string { if (!this.token) { this.token = localStorage.getItem('ACCESS_TOKEN'); } return this.token; }
@@ -38,7 +38,7 @@ export class AuthService {
   /////////////////////****************************************************************////////////////
 
   public getUser() {
-    return localStorage.getItem('userSess');
+    return JSON.parse(localStorage.getItem('userSess'));
   }
   /////////////////////****************************************************************////////////////
 
@@ -49,13 +49,15 @@ export class AuthService {
   /////////////////////****************************************************************////////////////
 
   setHeaders() {
-    console.log('token: ', this.token);
+    console.log('token: ', this.getToken());
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': ' bearer ' + this.getToken()
     });
     this.options$.next({ headers });
+    localStorage.setItem('headers', JSON.stringify(headers));
   }
+  getHeaders() { return JSON.parse(localStorage.getItem('headers')); }
 
   //**-----------------------------------------------------------------**//
   //////////REGISTRARSE
@@ -65,6 +67,7 @@ export class AuthService {
       .pipe(map((res: JwtResponseI) => {
         if (res) {
           this.setToken(res.token);
+          this.setHeaders();
           console.log('respuesta signup: ' + res);
           this.setUser(res);
           return res;
@@ -79,6 +82,7 @@ export class AuthService {
       .pipe(map(user => {
         console.log('respuesta login: ' + user);
         this.setToken(user.token);
+        this.setHeaders();
         this.setUser(user);
         return user;
       }));
