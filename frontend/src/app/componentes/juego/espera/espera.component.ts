@@ -17,11 +17,12 @@ import { dataSocketResponse } from '../../../interfaces/dataI';
 })
 
 export class EsperaComponent implements OnInit {
+
   idPArtida: string;
   enEspera: UserI[] = [];
   jugadores = [];
   palabrasPartida$: BehaviorSubject<any[]> = new BehaviorSubject(null);
-  nivel = arraygo.filter(n => n.nivel < 3);
+  nivel = arraygo.filter(n => n.nivel < 4);
   jugador = { username: null }
   restantes$ = new BehaviorSubject(null);
   closeResult: string;
@@ -41,8 +42,11 @@ export class EsperaComponent implements OnInit {
       .subscribe(p => {
         this.idPArtida = p; this.lanzar(p);
       });
+    this.socketAPI.infp$.pipe(filter(u => u != null)).subscribe(ip => { localStorage.setItem('INFP', JSON.stringify(ip)); console.log('INFOPARTIDA', ip) });
+
   }
-  //, map((p: dataSocketResponse) => p)
+
+
   ngOnInit() {
     this.socketAPI.usuario_online$.pipe(filter(u => u != null)).subscribe(u => console.log('SOCKET', u))
     this.socketAPI.listaUserUpdate$.pipe(filter(u => u != null)).subscribe(u => console.log('USUARIOS ONLINE', u))
@@ -51,6 +55,7 @@ export class EsperaComponent implements OnInit {
     });
     this.socketAPI.declinoDes$.pipe(filter(u => u != null)).subscribe(u => console.log(u));
   }
+
   ponerEnEspera(jug: UserI) {
     console.log('ENESPERA');
     console.log(jug);
@@ -71,39 +76,23 @@ export class EsperaComponent implements OnInit {
   aceptoDesafio(u) {
     this.restantes$.next(u.acept.faltan);
     console.log('Acepto: ', u);
-}
+  }
   crearPartida() {
-    if (this.enEspera.length > -1)
+    if (this.enEspera.length > -1) {
       this.juegoService.altaPartida('VS').pipe(filter((p: partidaI) => p != null)).subscribe((par: partidaI) => {
         this.idPartida$.next(par.idPartida)
       });
-
-
+    }
   }
   async  lanzar(idPartida) {
-
     this.socketAPI.armarPartida(idPartida);
     await this.armarPalabras(idPartida);
     console.log('crearPartida', idPartida);
-    console.log('Envio contrincantes', idPartida);
-    let contrincantes: [] = [];
-
-    this.socketAPI.contrincantes(idPartida, this.enEspera.map(u => u));
+    this.socketAPI.infoPartida(idPartida, { creador: this.getUserSess(), contrincantes: this.enEspera });
     this.socketAPI.empezar(idPartida);
-
-
-  }
-  async armarPalabras(idPartida) {
-
-    await this.juegoService.getPalabrasXlvl()
-      .pipe(filter(u => u != null))
-      .subscribe(u => this.palabrasPartida$.next(this.manejarPalabras(u)));
-
-
   }
   empezar = (idPartida) => {
     console.log('Empezar ', idPartida);
-
     if (idPartida) {
       localStorage.removeItem('IDPARTIDA');
       localStorage.setItem('IDPARTIDA', idPartida);
@@ -111,8 +100,14 @@ export class EsperaComponent implements OnInit {
       this.router.navigateByUrl(`/juego/vs/${idPartida}`);
     }
   }
+  async  armarPalabras(idPartida) {
 
-  getIdPartida() { return localStorage.getItem('IDPARTIDA'); }
+    await this.juegoService.getPalabrasXlvl()
+      .pipe(filter(u => u != null))
+      .subscribe(u => this.palabrasPartida$.next(this.manejarPalabras(u)));
+
+
+  }
   manejarPalabras(arrayP) {
     return this.nivel.map((n) => {
       return {
@@ -125,9 +120,11 @@ export class EsperaComponent implements OnInit {
       }
 
     });
-
-
   }
-
+  /////////////////////////////////////////
+  //GET-SET/////////////////////////////
+  getUserSess = () => JSON.parse(localStorage.getItem('userSess')).username;
+  getIdPartida = () => localStorage.getItem('IDPARTIDA');
+  getInfoPartida = () => JSON.parse(localStorage.getItem('INFP'));
 
 };

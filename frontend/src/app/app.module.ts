@@ -5,28 +5,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaginaInicioComponent } from './componentes/pagina-inicio/pagina-inicio.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { PrivadoPageComponent } from './componentes/privado-page/privado-page.component';
 import { LibsbootstrapModule } from './libsbootstrap/libsbootstrap.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from './servicios/user.service';
 import { ModalComponent } from './componentes/modal/modal.component';
+import { PaginaInicioComponent } from './componentes/pagina-inicio/pagina-inicio.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PaginaInicioComponent,
     NavbarComponent,
-    PrivadoPageComponent,
     NotFoundPageComponent,
-  
-
-
+    PaginaInicioComponent,
   ],
 
   imports: [

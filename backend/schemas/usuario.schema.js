@@ -6,8 +6,7 @@ const Schema = mongoose.Schema;
 var usuarioSchema = new Schema({
   id: {
     type: Schema.Types.ObjectId,
-    //unique:true
-  },
+    },
   nombre: String,
   apellido: String,
   email: {
@@ -62,7 +61,7 @@ var usuarioSchema = new Schema({
  * @return {[type]} [description]
  */
 usuarioSchema.statics.Delete = function(next) {
-  console.log('DELETE: usuario');
+  console.log('Borrado logico usuario');
   var _this = this;
   _this.isOcultar = true;
   next(_this.isOcultar);
@@ -75,7 +74,7 @@ usuarioSchema.statics.Delete = function(next) {
  * @return {[type]}          [devuelve la cadena cifrada]
  */
 usuarioSchema.methods.hashPassword = function(password) {
-  console.log('hashPasword');
+  //console.log('hashPasword');
   return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,8 +87,8 @@ usuarioSchema.methods.hashPassword = function(password) {
 usuarioSchema.methods.authenticar = function(password) {
   console.log('Authenticar');
   var _this = this;
-  console.log(typeof(password));
-  console.log("password viene:", password, "password schema=>", _this.password);
+  //console.log(typeof(password));
+  //console.log("password viene:", password, "password schema=>", _this.password);
   return bCrypt.compareSync(password, this.password);
   //  return password == this.password;
 }

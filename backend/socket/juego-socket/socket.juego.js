@@ -120,16 +120,17 @@ module.exports = (juego, socketClientes, socketEnEspera, socketSalas) => {
       data: data,
       idPartida: idSala
     }
-    console.log('emitir data formateada: ');
+    console.log('emitir data formateada: ', dt);
     if(!username) {
       console.log('emitir No tiene username! ');
       if(sal) {
         console.log('emitir Encontre sala!');
+        sal.creador.socketClient.emit(evento, dt);
+        console.log('CREADOR: ', sal.creador.usuario.username);
         sal.clientes.forEach((cli) => {
           cli.socketClient.emit(evento, dt)
-          console.log('emitir Emiti al cliente: ', cli.id);
+          console.log('emitir Emiti al cliente: ', cli.usuario.username);
         });
-        sal.creador.socketClient.emit(evento, dt);
       }
     } else {
       console.log('emitir tiene username!');
@@ -142,6 +143,14 @@ module.exports = (juego, socketClientes, socketEnEspera, socketSalas) => {
         }
         sal.creador.socketClient.emit(evento, dt);
       }
+    }
+  }
+  ///////-----------------------------------***************************//////
+  limpiarSala = (idSala) => {
+    let sal = socketSalas.getSala(idSala);
+    if(sal) {
+      console.log('LimpiarSala: encontre sala!');
+      socketSalas.eliminarSala(idSala);
     }
   }
   ///////-----------------------------------***************************//////
@@ -166,9 +175,8 @@ module.exports = (juego, socketClientes, socketEnEspera, socketSalas) => {
     let emisor = juego.decoded_token.username;
     console.log('finPartida');
     console.log('DATA: ', data);
-    if(data.idPartida) {
+    if(data.idPartida && data.data == true) {
       emitir(data.idPartida, 'terminar', data.data, data.username, emisor);
-      socketSalas.eliminarSala(data.idPartida);
     } else console.log('IDPARTIDA NULL');
   });
   ///////-----------------------------------***************************//////
@@ -221,18 +229,20 @@ module.exports = (juego, socketClientes, socketEnEspera, socketSalas) => {
     emitir(data.idPartida, 'resultadoJugador', data.data, null, emisor);
   })
   ///////-----------------------------------***************************//////
+  juego.on('infopartida', (data) => {
+    let emisor = juego.decoded_token.username;
+    console.log('infopartida');
+    console.log('DATA: ', data);
+    emitir(data.idPartida, 'infp', data.data, null, emisor);
+  })
+  ///////-----------------------------------***************************//////
   juego.on('dificultad', (data) => {
     let emisor = juego.decoded_token.username;
     console.log('dificultad');
     console.log('DATA: ', data);
     emitir(data.idPartida, 'dificil', data.data, null, emisor);
   })
+  juego.on('eliminarSala', (data) => limpiarSala(data.data));
   ///////-----------------------------------***************************//////
-  juego.on('contrincantes', (data) => {
-    let emisor = juego.decoded_token.username;
-    console.log('dificultad');
-    console.log('DATA: ', data);
-    emitir(data.idPartida, 'contrincantesPartida', data.data, null, emisor);
-  })
   ///////-----------------------------------***************************//////
 }

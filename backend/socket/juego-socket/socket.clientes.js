@@ -13,7 +13,7 @@ exports.agregarCliente = (socket, user) => {
       usuario: user
     });
     console.log('Agrege cliente Juego: ' + user.username);
-    //la funcion disconnect que anda, elimina del array al user de one
+  //  console.log('usuarios',usuarios);
     return true;
   }
   usuarios = usuarios.map(u => (u.id == user.id) ? {

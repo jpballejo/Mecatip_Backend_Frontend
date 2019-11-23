@@ -8,10 +8,12 @@ var infoPartida = new Schema({
     type: String,
     index: true
   },
+  creador: {
+    type: String
+  },
   contrincantes: [String],
   idPartida: {
     type: String,
-
   },
   puntos_ganados: {
     type: Number,
@@ -40,7 +42,7 @@ var infoPartida = new Schema({
   },
   jugada: {
     type: Boolean,
-    default: false
+    default: true
   }
 });
 /////////////////////////////////////////////////////////////////////////////////////////

@@ -19,22 +19,7 @@ export class JuegoVsComponent implements OnInit {
   puntosGanados: number = 0;
   puntosPerdidos: number = 0;
   dificil: Boolean = false;
-  contrincantes: [] = [];
   intervalSub: Subscription = null;
-  altaInfoPartida() {
-    //batiPArtida
-    let infoPartida = {
-
-      idPartida: this.getIdPartida(),
-      contrincantes: this.contrincantes,
-      puntos_ganados: this.puntosGanados,
-      puntos_perdidos: this.puntosPerdidos,
-      nivelAlcanzado: this.nivel$.value,
-      jugada: true,
-    };
-    console.log('INFOPARTIDA', infoPartida);
-    //  this.juegoService.altaInfoPartida(infoPartida).subscribe((error) => console.log, (complete) => { console.log('infoPartidaCreado') });
-  }
   public arrayPuntajes: any[] = [];
   public puntaje = 0;
   seg$: BehaviorSubject<number> = new BehaviorSubject(null);
@@ -47,20 +32,17 @@ export class JuegoVsComponent implements OnInit {
   PALABRA: string = null;
   escribiendo: string = '';
 
-  get CREATOR() {
-    return !!parseInt(localStorage.getItem('CREATOR'));
-  }
-  get PALABRAS(): palabrasXlvlI[] {
-    return JSON.parse(localStorage.getItem('palNivel')) || [];
-  }
 
-  constructor(public juegoService: JuegoService, public socketAPI: SocketJuegoService, public auth: AuthService, public router: Router) {
+  constructor(
+    public juegoService: JuegoService,
+    public socketAPI: SocketJuegoService,
+    public auth: AuthService,
+    public router: Router) {
     ////////////////////////////////////////////////SUBSCRIPCIONES////////////////////////////////////////////////////////////////////////
-    this.socketAPI.contrincantes$.subscribe(d => this.contrincantes = d.map(u => u));
-    ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
 
     ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
     this.socketAPI.comienza$.pipe(filter(u => u != null)).subscribe(u => {
+      console.log('COMIENZA', u);
       this.idPartida = u;
       this.siguienteNivel();
     });
@@ -81,9 +63,11 @@ export class JuegoVsComponent implements OnInit {
       .pipe(filter(() => this.CREATOR))
       .subscribe(this.go);
     ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
-
-    this.nivel$.subscribe(((n) => {
-      if (this.PALABRAS[this.PALABRAS.length - 1].nivel == n) {
+    this.nivel$.pipe(filter(u => u != null), filter(u => this.PALABRAS.length > -1)).subscribe(((n) => {
+      console.log('palabras length', this.PALABRAS.length);
+      console.log('pala', this.PALABRAS[this.PALABRAS.length - 1]);
+      console.log('NIVEL ERROR ', this.PALABRAS[this.PALABRAS.length - 1].nivel)
+      if (this.PALABRAS[this.PALABRAS.length - 1].nivel < n) {
         this.socketAPI.resultadoFinal(this.idPartida, this.puntaje, JSON.parse(localStorage.getItem('userSess')));
         this.altaInfoPartida();
         this.intervalSub.unsubscribe();
@@ -93,29 +77,26 @@ export class JuegoVsComponent implements OnInit {
       }
     }));
     ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
-
     this.indexPalabra$
       .pipe(filter(() => !!this.palabrasXlvl$.value && !!this.PALABRAS && !!this.PALABRAS.length))
       .subscribe(this.palabra);
     ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
-
     this.seg$
       .pipe(filter(s => !!this.palabrasXlvl$.value && this.palabrasXlvl$.value.tiempo == s))
       .pipe(filter(() => this.CREATOR))
       .subscribe(() => this.socketAPI.cambiarPalabra(this.getIdPartida(), this.indexPalabra$.value + 1))
     ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
-    this.socketAPI.terminar$.pipe(filter(u => !!u)).subscribe(u => { this.terminado() });//this.terminar()
+    this.socketAPI.terminar$.pipe(filter(u => u == true)).subscribe(u => { this.limpiar() });//ejecuta la funcion terminar
+    //this.socketAPI.terminado$.pipe(filter(u => u == true)).subscribe(u => { console.log('REDIRIGIENDO'); this.router.navigateByUrl('/juego/principal') });//una vez se limpia la sala se emite terminado
     ////////////////__________________-------------------___________________//////////////////////////////////////////////////////////////
+
   }
 
   ngOnInit() {
 
 
   }
-
-
   ////////////////////////////////////////FUNCIONES////////////////////////////////////////
-
   arrancar = () => {
     console.log('ARRANCAR');
     this.socketAPI.go(this.getIdPartida());
@@ -153,38 +134,36 @@ export class JuegoVsComponent implements OnInit {
     this.escribiendo = ''
   }
   /////////////////////**********************************************/////////////////////
-  finPartida = () => { console.log('FinPartida: ', this.getIdPartida()); this.socketAPI.finPartida(this.getIdPartida()); }
+  finPartida = () => { console.log('FinPartida: ', this.getIdPartida()); if (this.CREATOR) { this.socketAPI.finPartida(this.getIdPartida()) } }
   /////////////////////**********************************************/////////////////////
-  terminado = () => {
-    console.log('TERMINAR ejecutado!');
-    this.limpiar();
-    console.log('TERMINAR redirigiendo...');
-    this.router.navigateByUrl('/juego/principal/');
-  }
+
   /////////////////////**********************************************/////////////////////
   limpiar = () => {
     console.log('Limpiar ejecutado!');
-    localStorage.removeItem('IDPARTIDA');
-    localStorage.removeItem('CREATOR');
+    console.log('soy creador?', this.CREATOR);
+
+    let idPartida = this.getIdPartida();
     localStorage.removeItem('palNivel');
-    console.log('Limpiar limpio localStorage');
-    this.socketAPI.contrincantes$.unsubscribe();
-    this.socketAPI.idPartida$.unsubscribe();
-    this.socketAPI.comienza$.unsubscribe();
-    this.socketAPI.dificil$.unsubscribe();
-    this.socketAPI.resultadoJugador$.unsubscribe();
-    this.socketAPI.cambiarPalabra$.unsubscribe();
-    this.socketAPI.terminar$.unsubscribe();
-    console.log('Limpiar aplico unsubscribe a los observables');
-  }
-  /////////////////////**********************************************/////////////////////
-  tiempoCorre(t) { console.log(t); }
-  /////////////////////**********************************************/////////////////////
-  limpiarNivel = () => {
-    for (let n = 1; n < 13; n++) {
-      localStorage.removeItem(`lvl${n}`);
+    localStorage.removeItem('INFP');
+    localStorage.removeItem('IDPARTIDA');
+    if (this.CREATOR) {
+      console.log('I AM CREATOR')
+      this.socketAPI.eliminarSala(idPartida);
     }
+    localStorage.removeItem('CREATOR');
+    this.router.navigateByUrl('/inicio');
+    /*  let idPartida = this.getIdPartida();
+      localStorage.removeItem('palNivel');
+      localStorage.removeItem('INFP');
+      localStorage.removeItem('IDPARTIDA');
+      console.log('Limpiar limpio localStorage');
+      console.log('tiene idPartida', idPartida);
+
+      localStorage.removeItem('CREATOR');
+      */
   }
+  /////////////////////**********************************************/////////////////////
+  //limpiarSala = (idPartida) => { console.log('CREATOR: ', this.CREATOR); this.socketAPI.limpiarSala(idPartida); }
   /////////////////////**********************************************/////////////////////
   setIdPartida = (idPartida) => {
     if (idPartida) {
@@ -195,5 +174,28 @@ export class JuegoVsComponent implements OnInit {
   /////////////////////**********************************************/////////////////////
   getIdPartida = () => localStorage.getItem('IDPARTIDA');
   /////////////////////**********************************************/////////////////////
-  dificultad = (val) => this.socketAPI.dificultad(this.getIdPartida(), val);
+  dificultad = (val) => { this.socketAPI.dificultad(this.getIdPartida(), val); console.log('dificultad') }
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+  altaInfoPartida = () => {
+    /*  let infoPartida = {
+        idPartida: this.getIdPartida(),
+        creador: this.getInfoPartida().creador,
+        contrincantes: this.getInfoPartida().contrincantes,
+        puntos_ganados: this.puntosGanados,
+        puntos_perdidos: this.puntosPerdidos,
+        nivelAlcanzado: this.nivel$.value,
+        jugada: true,
+      };*/
+    console.log('INFOPARTIDA', this.getInfoPartida());
+    //  this.juegoService.altaInfoPartida(infoPartida).subscribe((error) => console.log, (complete) => { console.log('infoPartidaCreado') });
+  }
+
+
+  get CREATOR() {
+    return !!parseInt(localStorage.getItem('CREATOR'));
+  }
+  get PALABRAS(): palabrasXlvlI[] {
+    return JSON.parse(localStorage.getItem('palNivel')) || [];
+  }
+  getInfoPartida = () => JSON.parse(localStorage.getItem('INFP'));
 }

@@ -9,12 +9,10 @@ var enviarMail = require('../email/nodeMail');
 /////////////////////////////FUNCIONES EXPORTS////////////////////////////////////////////////////
 exports.generarCadena = () => {
   var ps = crypto.randomBytes(20).toString('hex');
-  console.log(ps);
   return ps;
 }
 exports.isEmail = (cadena) => (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/).test(cadena);
 exports.hashPassword = (password) => {
-  console.log(password);
   return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 }
 exports.resetPswd = (user, passwordnuevo) => {

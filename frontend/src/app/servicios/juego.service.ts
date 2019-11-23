@@ -65,6 +65,7 @@ export class JuegoService extends ServicioBaseService {
   }
 
   altaInfoPartida(infoPartida) {
+    console.log(this.options);
     return this.httpClient.post<InfoPartidaI | any>(`${this.apiUrlJuego}/infopartida/${infoPartida}`, this.options)
       .pipe(map((res: InfoPartidaI) => {
         if (res) {

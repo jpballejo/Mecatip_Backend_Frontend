@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './principal/principal.component';
 import { EsperaComponent } from './espera/espera.component';
-import { SeleccionJugadorComponent } from './seleccion-jugador/seleccion-jugador.component';
 import { JuegoVsComponent } from './juego-vs/juego-vs.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../modal/modal.component';
@@ -17,7 +16,7 @@ import { ModalComponent } from '../modal/modal.component';
 
 
 @NgModule({
-  declarations: [ModalComponent, JuegoComponent, ChatComponent, PrincipalComponent, EsperaComponent, SeleccionJugadorComponent, JuegoVsComponent],
+  declarations: [ModalComponent, JuegoComponent, ChatComponent, PrincipalComponent, EsperaComponent, JuegoVsComponent],
   imports: [
     CommonModule,
     JuegoRouting,

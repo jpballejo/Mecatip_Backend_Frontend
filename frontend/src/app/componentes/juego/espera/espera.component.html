@@ -3,13 +3,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>CREAR PARTIDA</title>
   </head>
   <body>
-    <div>
-      <button (click)="desafiar()" name="btn desafio" type="button" class="btn btn-danger btn-lg">
-        DESAFIAR
-      </button>
+    <div class="container-fluid">
+      <div class=" col-sm-3 col-lg-9">
+        <button (click)="desafiar()" name="btn desafio" type="button" class="btn btn-primary btn-lg btn-block">
+          DESAFIAR
+        </button>
+         </div>
+    </div>
+    <div >
+
       <table class="table table-striped">
         <thead>
           <tr>
@@ -53,7 +58,7 @@
           </p>
         </h1>
 
-        <button type="button" class="btn btn-success btn-lg" (click)="crearPartida()">
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="crearPartida()">
           LANZAR
         </button>
 

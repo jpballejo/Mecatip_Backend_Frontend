@@ -7,7 +7,7 @@ oauth2Client.setCredentials({
   refresh_token: "1//04WpcDqElxT06CgYIARAAGAQSNwF-L9IrdNw5ovKIjq1ny6MQCtqIIXXNJKaEECmDtt5D-yUGtJu1N0SWylswk1pYVJmJFKGSg84"
 });
 var accessToken = oauth2Client.getAccessToken();
-console.log(accessToken);
+//console.log(accessToken);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var auth = {
   type: 'OAuth2',

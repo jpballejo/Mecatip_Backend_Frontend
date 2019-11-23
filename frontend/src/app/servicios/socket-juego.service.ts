@@ -10,6 +10,8 @@ export class SocketJuegoService {
 
 
 
+
+
   ///////////////////////defino observables para los emit
   public usuario_online$: BehaviorSubject<any> = new BehaviorSubject(null);
   public listaUserUpdate$: Subject<any> = new BehaviorSubject(null);
@@ -29,7 +31,9 @@ export class SocketJuegoService {
   public resultadoJugador$: BehaviorSubject<any> = new BehaviorSubject(null);
   public terminar$: BehaviorSubject<any> = new BehaviorSubject(null);
   public dificil$: BehaviorSubject<boolean> = new BehaviorSubject(null);
-  public contrincantes$: BehaviorSubject<any> = new BehaviorSubject(null);
+  public infp$: BehaviorSubject<any> = new BehaviorSubject(null);
+
+
 
 
   ////////////////////defino NSP
@@ -57,8 +61,10 @@ export class SocketJuegoService {
     this.juego.on('cambiarPalabra', data => this.cambiarPalabra$.next(data));
     this.juego.on('resultadoJugador', ({ data }) => this.resultadoJugador$.next(data));
     this.juego.on('terminar', ({ data }) => this.terminar$.next(data));
-    this.juego.on('dificil', ({data}) => this.dificil$.next(data));
-    this.juego.on('contrincantesPartida', ({ data }) => this.contrincantes$.next(data));
+    this.juego.on('dificil', ({ data }) => this.dificil$.next(data));
+    this.juego.on('infp', ({ data }) => this.infp$.next(data));
+    //  this.juego.on('terminado', ({ data }) => this.terminado$.next(data));
+
 
   }
 
@@ -112,11 +118,11 @@ export class SocketJuegoService {
     this.juego.emit('dificultad', { idPartida, data: dif, username: null });
 
   }
-  contrincantes = (idPartida, contrincantes) => {
-    this.juego.emit('contrincantes', { idPartida, data: contrincantes, username: null });
+  infoPartida = (idPartida, infoPartida) => {
+    this.juego.emit('infopartida', { idPartida, data: infoPartida, username: null });
 
   }
-
+  eliminarSala = (idPartida) => this.juego.emit('eliminarSala', { idPartida, data: true, username: null })
   //*******************************************GESTION DURANTE PARTIDA_________________________________________________
 
 

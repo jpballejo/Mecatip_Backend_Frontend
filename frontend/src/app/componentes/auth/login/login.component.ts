@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       "password": password
     };
     this.authService.login(userForm.value).subscribe((res) => {
-      if (res.token) this.router.navigateByUrl('/inicio');
+      if (res.token) this.router.navigateByUrl('/juego/principal');
       else this.router.navigateByUrl('/auth/login');
     })
     console.log(user);

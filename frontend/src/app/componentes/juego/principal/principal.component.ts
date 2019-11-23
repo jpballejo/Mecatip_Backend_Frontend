@@ -37,7 +37,7 @@ export class PrincipalComponent implements OnInit, OnDestroy {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     this.socketAPI.idPartida$.pipe(filter(p => p != null)).subscribe(p => { console.log('idPartida', p); });
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    this.socketAPI.infp$.pipe(filter(u => u != null)).subscribe(ip => { localStorage.setItem('INFP', JSON.stringify(ip)); console.log('INFOPARTIDA', ip) });
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -98,10 +98,10 @@ export class PrincipalComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
 
 
-    /*  this.socketAPI.palabrasPartida$.unsubscribe();
-      this.socketAPI.empezar$.unsubscribe();
-      this.socketAPI.teDesafio$.unsubscribe();*/
 
   }
+
+
+  getInfoPartida = () => JSON.parse(localStorage.getItem('INFP'));
 
 }

@@ -2,20 +2,19 @@ var Usuarios = require('../models/usuario.modelo');
 module.exports = (server) => {
   jwtSecret = require('../passport/jwtConfig');
   var socketIo = require('socket.io')(server);
-  var socketSJWT = require('./socket.validacion.SJWT');
-  let socketClientes = require('./socket.clientes');
-  let socketEnEspera = require('./socket.enEspera');
-  let socketSalasJuego = require('./socket.salasJUEGO');
-  let mannagerJuego = require('./socket.juego');
-  let mannagerChat = require('./socket.chat');
-  let socketEnEsperaChat = require('./socket.enEsperaChat');
-  let socketClientesJuego = require('./socket.clientesJuego');
-  let socketClienteschat = require('./socket.clienteChat');
-  socketClientes.funcionInit();
-  socketSalas.funcionInit();
+  var socketSJWT = require('./jwt-seguridad/socket.validacion.SJWT');
+  //let socketClientes = require('./socket.clientes');
+  let socketEnEspera = require('./juego-socket/socket.enEspera');
+  let socketSalasJuego = require('./juego-socket/socket.salas');
+  let mannagerJuego = require('./juego-socket/socket.juego');
+  let socketClientesJuego = require('./juego-socket/socket.clientes');
+  let mannagerChat = require('./chat-socket/socket.chat');
+  let socketEnEsperaChat = require('./chat-socket/socket.enEspera');
+  let socketClienteschat = require('./chat-socket/socket.cliente');
+  let socketSalasChat=require('./chat-socket/socket.salas');
+  socketSalasJuego.funcionInit();
   socketEnEspera.funcionInit();
   socketEnEsperaChat.funcionInit();
-  //socketSJWT(socketIo, jwtSecret);
   const juego = socketIo.of('/juego');
   const chat = socketIo.of('/chat');
   socketSJWT(juego, jwtSecret);
@@ -50,6 +49,6 @@ module.exports = (server) => {
         socketClienteschat.desconectarCliente(socket.decoded_token.username)
       });
     }
-    mannagerChat(socket, socketEnEsperaChat, socketClienteschat, socketSalas)
+    mannagerChat(socket, socketEnEsperaChat, socketClienteschat, socketSalasChat)
   });
 };

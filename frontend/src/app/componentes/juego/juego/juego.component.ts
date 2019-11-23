@@ -141,7 +141,6 @@ export class JuegoComponent implements OnInit {
 
     this.temporizadorPalabra = setInterval(() => {
       if (this.tiempoLimite > 0) {
-        // Decrementar
         this.tiempoLimite--;
       }
       else if (this.tiempoLimite === 0) {
@@ -166,10 +165,8 @@ export class JuegoComponent implements OnInit {
   FinalizarTemporizador = () => {
     clearInterval(this.timer);
     this.timer = null;
-
     clearInterval(this.temporizadorPalabra);
     this.temporizadorPalabra = null;
-
     this.getPalabrasPorMinuto();
     this.getProgreso();
     this.getPrecision();
@@ -204,16 +201,13 @@ export class JuegoComponent implements OnInit {
 
   checkeaPalabra = (event: KeyboardEvent, word: string, index: number) => {
     if (event.keyCode !== 16) { // Sino es la tecla shift
-
       if (event.keyCode === 222 || event.keyCode === 186) { // Si aprieta el tilde
         this.apretoTilde = true;
         return;
       }
-
       this.usuarioInput = word;
       let letraAct = this.palabras[index].split("");
       this.checkeaLetra(letraAct, event.key);
-
       if (event.which === 32) { // Si aprita espacio
         if (word.replace(/\s/g, "") === this.palabras[index]) { // Elimino espacio entre letras (En caso que alla)
           this.palAcertadas++;

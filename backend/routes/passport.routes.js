@@ -3,7 +3,7 @@ var Usuario = require('../models/usuario.modelo');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
 var jwtSecret = require('../passport/jwtConfig');
-var jwt = require('jsonwebtoken');
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = function(passport) {
   /////////////LOGIN-POST-----------------------------------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ module.exports = function(passport) {
   });
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////SIGNOUT------------------------------------------------------------------------------------------------------------------------------
-  router.get('/logout', function(req, res, next) {
+  router.post('/logout', function(req, res, next) {
     req.logout();
     return res.send('LOGOUT');
   });

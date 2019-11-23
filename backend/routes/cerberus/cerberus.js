@@ -1,16 +1,10 @@
 module.exports = (passport) => {
-  /**
-   * [isAuthorized: funcion que valida si es un usuario ADMIN]
-   * @param  {[type]}   req  [description]
-   * @param  {[type]}   res  [description]
-   * @param  {Function} next [description]
-   * @return {[type]}        [description]
-   */
+
 return isAuthenticated = (req, res, next) => {
     passport.authenticate('jwt', {
       session: false
     }, (err, user, info) => {
-      console.log("ejecutando *callback auth* de authenticate para estrategia jwt");
+      console.log("Cerberus estrategia: jwt");
       //si hubo un error relacionado con la validez del token (error en su firma, caducado, etc)
       if(info) {
         return next( info.message);
@@ -25,7 +19,9 @@ return isAuthenticated = (req, res, next) => {
       }
       //inyectamos los datos de usuario en la request
       req.user = user;
+      console.log('APROVED');
       next();
     })(req, res, next);
   }
+
 }

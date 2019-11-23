@@ -6,7 +6,7 @@ const opts = {//,ExtractJwt.fromAuthHeaderWithScheme('JWT')
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: jwtSecret.secret
 };
-console.log(opts);
+//console.log(opts);
 // fromAuthHeaderAsBearerToken()
 module.exports = function(passport) {
 //el return importa!!!

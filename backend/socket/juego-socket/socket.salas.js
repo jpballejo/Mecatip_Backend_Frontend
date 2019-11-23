@@ -42,7 +42,7 @@ exports.agregarASala = (sala, cliente) => {
   return false;
 }
 /////////////////////////////////////////////////////////////////////////
-exports.eliminarSala = (sala) => salas = salas.filter(u => u.sala != sala);
+exports.eliminarSala = (sala) => salas = salas.filter((u) =>  u.sala != sala);
 /////////////////////////////////////////////////////////////////////////
 exports.getClientesSala = (sala) => {
   let sal = salas.filter(s => s.sala == sala)[0];
