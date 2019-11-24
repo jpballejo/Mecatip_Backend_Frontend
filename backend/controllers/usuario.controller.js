@@ -57,7 +57,7 @@ exports.getUsuarios = (req, res, next) => {
  * @return {[type]}        [description]
  */
 exports.getUsuario = (req, res, next) => {
-  console.log('request ',req.params.usuario);
+  console.log('request ', req.params.usuario);
   var query = Usuario.findOne({
     username: req.params.usuario
   });
@@ -84,11 +84,15 @@ exports.getUsuario = (req, res, next) => {
  * @return {[type]}        [description]
  */
 exports.updateUsuario = (req, res, next) => {
-  Usuario.findOnedAndUpdate({username:req.body.usuarioNuevo.username}, req.body.usuarioNuevo, (err, usuario) => {
+  console.log('USUARIO NUEVO UPDATE: ', req.body);
+
+  Usuario.findOneAndUpdate({
+    username: req.body.username
+  }, req.body, (err, usuario) => {
     if(err) {
       return next(err);
     } else {
-      res.status(200).json(user);
+      res.status(200).json(usuario);
     }
   });
 };
@@ -136,9 +140,7 @@ exports.removeUsuarioById = (req, res, next) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////cambiarPassword-PUT/////////////////////////////////////////////////////////////////////////////////////
 exports.cambiarPassword = (req, res, next) => {
-
-  console.log('body ',req.user.username);
-
+  console.log('body ', req.user.username);
   var query = {
     username: req.user.username
   };

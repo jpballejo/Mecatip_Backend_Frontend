@@ -4,11 +4,13 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular//common/http';
 import { UsuariosRouting } from './usuarios.routing';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [ListaUsuariosComponent],
+  declarations: [ListaUsuariosComponent, PerfilComponent],
   imports: [
-    CommonModule, FormsModule, HttpClientModule, UsuariosRouting
+    CommonModule, FormsModule, HttpClientModule, UsuariosRouting,ReactiveFormsModule
   ],
-  exports: [ListaUsuariosComponent]
+  exports: [ListaUsuariosComponent,PerfilComponent]
 })
 export class UsuariosModule { }

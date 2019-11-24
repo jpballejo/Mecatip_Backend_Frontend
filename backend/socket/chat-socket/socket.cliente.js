@@ -5,9 +5,8 @@ exports.funcionInit = () => {
 usuarios = [];
 /////////////////////////////////////////////////////////////////////////
 exports.agregarCliente = (socket, user) => {
-  console.log(user._id);
+//  console.log(user._id);
   let _user = usuarios.filter(u => u.id == `${user._id}`)[0];
-  console.log(_user);
   if(!_user) {
     usuarios.push({
       id: user._id,

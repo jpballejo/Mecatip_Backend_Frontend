@@ -1,2 +1,20 @@
-<p>anda pp
-</p>
+<div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">PALABRAS O FRASES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let palabra of palabras; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td scope="row"> {{palabra}}</td>
+
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

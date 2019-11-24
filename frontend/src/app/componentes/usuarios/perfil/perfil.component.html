@@ -1,0 +1,19 @@
+<div class="perfilUser">
+
+  <form [formGroup]="user">
+    <div class="username">
+      <label for="username"> <input type="text" formControlName="username" placeholder="Username." ></label>
+    </div>
+    <div class="nombre">
+      <label for="nombre"> <input type="text" formControlName="nombre" placeholder="Nombre."></label>
+    </div>
+    <div class="apellido">
+      <label for="apellido"> <input type="text" formControlName="apellido" placeholder="Apellido."></label>
+    </div>
+    <div class="email">
+      <label for="email"> <input type="text" formControlName="email" placeholder="Email." > </label>
+    </div>
+    <button type="button" name="Modificar" (click)="salvar()">Modificar</button>
+  </form>
+
+</div>

@@ -1,19 +1,108 @@
-<div class="row">
-  <div class="col-md-6 mx-auto">
-    <div class="card-header">Bienvenidos al Chat</div>
-    <div class="card text-white bg-dark overflow-auto" style="width: 697px; height: 500px">
 
-      <div *ngFor="let message of messages">
-        <hr>
-        {{message}}
+
+<div class="container-fluid chat-container">
+  <div class="row h-100">
+      <div class="col-3 border-chat-lightgray px-0" id="sidebar">
+          <div id="sidebar-content" class="w-100 h-100">
+              <div class="input-group p-0 d-xs-none" id="search-group">
+                  <input type="text" class="form-control border-0" placeholder="Buscar..." id="search">
+                  <span class="input-group-addon">
+                      <button class="btn border-0 bg-white text-primary hover-color-darkblue" type="button">
+                          <i class="fa fa-search fa-fw"></i>
+                      </button>
+                  </span>
+              </div>
+
+
+              <div class="sidebar-scroll"  id="list-group">
+                    <ul *ngFor="let sala of salas" class="list-group w-100" id="friend-list">
+                    <li style="border:1px solid black" class="list-group-item p-1 active hover-bg-lightgray">
+                        <img src="//placehold.it/50x50" class="rounded-circle">
+                        <span (click)="setearSalaActual(sala)" id="salaAct"  class="d-xs-none username">{{sala.sala}}</span>
+
+                    </li>
+
+                </ul>
+                </div>
+
+
+              <div class="input-group">
+                    <input  (keyup)="$event.keyCode == 13 && crearSala()" [(ngModel)]="nomSala" type="text" class="form-control border-0" placeholder="Nombre de la Sala...">
+
+                        <button (click)="crearSala()" style="height: 40px; margin-left:1px;" class="btn border-0 bg-primary text-white " type="button">
+                          Crear Sala
+                        </button>
+
+
+                  </div>
+          </div>
+      </div>
+      <div class="col d-flex p-0">
+          <div class="card">
+              <div class="card-header bg-darkblue text-white py-1 px-2" >
+                  <div class="d-flex flex-row justify-content-start">
+                      <div class="col-1 p-1">
+                          Foto
+                      </div>
+                      <div class="col">
+                          <div class="my-0">
+                              <b>Título de la sala</b>
+                          </div>
+                          <div class="my-0">
+                              <small>Descripcion de la sala</small>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-body bg-lightgrey d-flex flex-column p-0" style="max-height:500px;flex: 9 1">
+                    <div class="container-fluid message-scroll" style="min-width:800px;flex: 1 1">
+
+                        <div *ngFor="let message of messages" style="height:50px;" class="row">
+                            <div class="card message-card m-4">
+                                <div class="card-body p-2">
+                                    <span>{{message}}</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+              <div class="input-group">
+                    <input  (keyup)="$event.keyCode == 13 && enviarMensaje()" [(ngModel)]="message" type="text" class="form-control border-0" placeholder="Escriba su mensaje...">
+                    <span class="input-group-addon">
+                        <button (click)="enviarMensaje()" style="height: 40px; margin-left:1px;" class="btn border-0 bg-white text-primary hover-color-darkblue" type="button">
+                          <i class="fa fa-telegram fa-2x"></i>
+                        </button>
+                    </span>
+
+
+                  </div>
+          </div>
       </div>
 
+
+
+      <div class="col-md-3">
+        <div class="chat-users">
+
+
+            <div *ngFor="let jugador of (socketAPI.listaUserUpdate$ | async)?.usuariosOnline || []" (click)="ponerEnEspera(jugador)" class="users-list">
+
+                <div class="chat-user">
+                    <img class="chat-avatar" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+                    <div class="chat-user-name">
+                        <strong>{{jugador}}</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="input-group">
-      <input (keyup)="$event.keyCode == 13 && sendMessage()" [(ngModel)]="message" type="text" class="form-control" id="nuevomsj" placeholder="Escriba su mensaje...">
-      <span class="input-group-btn">
-        <button (click)="sendMessage()" type="button" class="btn btn-primary">Enviar</button>
-      </span>
-    </div>
+
+
+
+
   </div>
+  <!-- row -->
 </div>
+<!-- container -->

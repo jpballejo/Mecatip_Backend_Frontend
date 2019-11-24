@@ -13,8 +13,10 @@ export class UserService extends ServicioBaseService {
     super(httpClient, auth);
   }
 
+  public getUsuario(username): Observable<UserI> {
+    return this.httpClient.get<UserI>(`${this.apiURL}users/${username}`, this.options).pipe(map((u: UserI) => u));
 
-
+  }
   public getUsuarios(): Observable<UserI[]> {
     console.log(this.options);
     return this.httpClient.get<UserI[]>(`${this.apiURL}users/`, this.options)
@@ -28,6 +30,10 @@ export class UserService extends ServicioBaseService {
 
   }
 
+  public modificarUser(usuarioNuevo): Observable<any> {
+    console.log('USUARIONUEVO', usuarioNuevo);
+    return this.httpClient.put<UserI>(`${this.apiURL}users/update`, usuarioNuevo, this.options);
+  }
 
   /* public updateCustomer(customer: Customer){}
 

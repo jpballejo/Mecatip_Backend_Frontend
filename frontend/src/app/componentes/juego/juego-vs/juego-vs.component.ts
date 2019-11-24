@@ -152,16 +152,7 @@ export class JuegoVsComponent implements OnInit {
     }
     localStorage.removeItem('CREATOR');
     this.router.navigateByUrl('/inicio');
-    /*  let idPartida = this.getIdPartida();
-      localStorage.removeItem('palNivel');
-      localStorage.removeItem('INFP');
-      localStorage.removeItem('IDPARTIDA');
-      console.log('Limpiar limpio localStorage');
-      console.log('tiene idPartida', idPartida);
-
-      localStorage.removeItem('CREATOR');
-      */
-  }
+    }
   /////////////////////**********************************************/////////////////////
   //limpiarSala = (idPartida) => { console.log('CREATOR: ', this.CREATOR); this.socketAPI.limpiarSala(idPartida); }
   /////////////////////**********************************************/////////////////////
@@ -177,7 +168,7 @@ export class JuegoVsComponent implements OnInit {
   dificultad = (val) => { this.socketAPI.dificultad(this.getIdPartida(), val); console.log('dificultad') }
   ////////////////////////////////////////////////////////////////////////////////////////////////
   altaInfoPartida = () => {
-    /*  let infoPartida = {
+    /* let infoPartida = {
         idPartida: this.getIdPartida(),
         creador: this.getInfoPartida().creador,
         contrincantes: this.getInfoPartida().contrincantes,

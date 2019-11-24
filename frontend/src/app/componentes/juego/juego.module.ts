@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JuegoComponent } from './juego/juego.component';
-import { ChatComponent } from './chat/chat.component';
+
 import { JuegoRouting } from './juego.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +16,7 @@ import { ModalComponent } from '../modal/modal.component';
 
 
 @NgModule({
-  declarations: [ModalComponent, JuegoComponent, ChatComponent, PrincipalComponent, EsperaComponent, JuegoVsComponent],
+  declarations: [ModalComponent, JuegoComponent, PrincipalComponent, EsperaComponent, JuegoVsComponent],
   imports: [
     CommonModule,
     JuegoRouting,
@@ -32,6 +32,6 @@ import { ModalComponent } from '../modal/modal.component';
   ],
 
   providers: [],//NgbModule BrowserModule
-  exports: [JuegoComponent, ChatComponent]
+  exports: [JuegoComponent]
 })
 export class JuegoModule { }

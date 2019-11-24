@@ -1,51 +1,22 @@
 module.exports = (chat, socketEnEsperaChat, socketClientes, socketSalas) => {
-  var utilidades = require('../utilidades/util');
+  var utilidades = require('../../utilidades/util');
+  var soketSalas = require('./socket.salas');
+
   salasChat = [];
-  var notificarSalaDeChat = (usuarios, userAuspiciante) => {
-    usuarios.forEach((user) => {
-      this.socketEnEsperaChat.getClienteUsername(user).socketClient.emit('invChat', userAuspiciante);
-    });
-  }
-  var crearSala = (userCreador) => {
-    var idSala = utilidades.generarID('Chat');
-    socketSalas.agregarSala(idSala, null, 'CHAT', userCreador);
-    conectarASala(userCreador, sala);
-    guardarSala(idSala, userCreador);
-  }
-  var conectarASala = (user, sala) => {
-    this.socketClient.getClienteUsername(user).socketClient.join(sala, () => {
-      chat.to(sala).emit('seConecto', user);
-    });
-  }
-  var guardarSala = (idSala, userAuspiciante) => {
-    if(!this.salasChat[idSala]) {
-      this.salasChat[idSala] = {
-        sala: idSala,
-        creador: userAuspiciante
-      }
-    }
-  };
-  var getSala = (userCreador) => {
-    return this.salasChat.forEach((sala) => {
-      if(sala.creador == userCreador) return sala.sala;
-    })
-  }
-  var existeSala = (sala) => this.salasChat[sala];
-  var getCreador = (idSala) => this.salasChat[idSala].creador;
-  //***************************************************************************//
   chat.on('msgnew', (msg, sala, socket) => {
-    if(sala == 'GENERAL') {
-      chat.emit('msg', {
-        emisor: socket.decoded_token.username,
-        mensaje: msg
-      });
-    }
-    if(existeSala(sala)) {
-      chat.to(sala).emit('msg', {
-        emisor: socket.decoded_token.username,
-        mensaje: msg
-      });
-    }
+    console.log("entra on msgnew");
+    console.log(Object.values(sala)[0]);
+    var nSala = Object.values(sala)[0];
+    console.log(salasChat);
+    let salA = soketSalas.getSalaPorNombre(nSala);
+    console.log("sala en sistema", salA);
+    console.log(msg.msg);
+    salA.mensajes.push(msg.msg);
+    console.log(salasChat);
+    socketClientes.getClientesOnlineUsuario().forEach((user) => user.socketClient.emit('nuevosMsj', {
+      msg: msg.msg,
+      sala: nSala
+    }));
   });
   chat.on('typing', (socket, sala) => {
     if(sala == 'GENERAL') {
@@ -95,9 +66,18 @@ module.exports = (chat, socketEnEsperaChat, socketClientes, socketSalas) => {
     }
   });
   chat.on('limpiarSala', (socket, idSala) => {
-    if(this.salasChat[`${idSala}`]) {
-      this.socketSalas.eliminarSala(idSala);
+    if(salasChat[`${idSala}`]) {
+      socketSalas.eliminarSala(idSala);
     }
   });
-
+  chat.on('crearSala', (userCreador) => {
+    console.log("llega3");
+    console.log(userCreador.userCreator);
+    soketSalas.crearSala(userCreador.userCreator);
+  });
+  chat.on('SalasTodas', () => {
+    chat.emit('allSalas', {
+      salasChat: soketSalas.salasChat
+    });
+  });
 }

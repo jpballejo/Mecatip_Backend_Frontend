@@ -22,7 +22,9 @@ export class PalabrasService extends ServicioBaseService {
   }
 
 
-  getPalabra(pal) { }
+  getPalabras() {
+    return this.httpClient.get<PalabrasI[]>(`${this.apiUrl}`, this.options);
+  }
   altaPalabra(pal) { }
   eliminarPalabra(pal) { }
 
