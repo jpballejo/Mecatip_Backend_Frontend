@@ -6,31 +6,27 @@
     <title></title>
   </head>
   <body>
-    <div>
-      <button (click)="desafiar()" name="btn desafio" type="button" class="btn btn-danger btn-lg">
-        DESAFIAR
-      </button>
+    
+      <div class="row mt-5">
+     
+     <div class="col-md-6 text-center">
       <table class="table table-striped">
         <thead>
           <tr>
-
-            <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores</th>
-
-          </tr>
+            <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores En Línea</th>
+       </tr>
         </thead>
         <tbody>
           <tr *ngFor="let jugador of (socketAPI.listaUserUpdate$ | async)?.usuariosOnline || []" (click)="ponerEnEspera(jugador)">
-
-
-            <td *ngIf="auth.getUser().username!==jugador">
+           <td *ngIf="auth.getUser().username!==jugador">
               <button type="button" class="btn btn-outline-secondary"> {{jugador}}</button>
-
             </td>
-
-          </tr>
+         </tr>
         </tbody>
       </table>
+    </div>
 
+      <div class="col-md-6 text-center">
       <table class="table table-striped">
         <thead>
           <th scope="col" sortable="name" (sort)="onSort($event)">Jugadores en Espera</th>
@@ -38,28 +34,36 @@
         <tbody>
           <tr *ngFor="let jugadorEsp of enEspera">
             <td>{{jugadorEsp}}</td>
-
           </tr>
         </tbody>
       </table>
-      <div class="restantes">
+</div>
 
-        <h1 class="display-4">
-          <label for="res">Restantes</label>
+
+
+
+<div class= "container text-center">
+      <button style="width: 205px; " (click)="desafiar()" name="btn desafio" type="button" class="btn-dark btn btn-outline-danger btn-lg">
+          DESAFIAR
+        </button>
+     
+        <h4>
+          Pendientes de Aceptación: 
           <p id="res"class="text-danger">
 
            {{restantes$.value}}
 
           </p>
-        </h1>
+        </h4>
 
-        <button type="button" class="btn btn-success btn-lg" (click)="crearPartida()">
-          LANZAR
+       <button style="width: 205px;" type="button" class="btn-dark btn btn-outline-success btn-lg" (click)="crearPartida()">
+          COMENZAR JUEGO
         </button>
+        
 
-      </div>
-    </div>
+  </div>
 
+</div>
   </body>
 
 <ng-template #mymodal let-modal>

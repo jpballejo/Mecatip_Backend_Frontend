@@ -2,9 +2,7 @@
   color: blue;
 }
 
-.btn {
-  display: flex;
-}
+
 
 .btnSingle {
 
@@ -17,3 +15,19 @@
 .chat {}
 
 .userOnline {}
+
+*{
+	box-sizing:border-box;
+}
+
+html,body{
+	width:100%;
+	height:100%;
+}
+
+body{
+	margin:0;
+	
+}
+
+

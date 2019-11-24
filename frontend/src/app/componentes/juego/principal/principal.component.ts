@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '../../modal/modal.component';
 import { NgbModal, ModalDismissReasons, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../../../servicios/auth.service';
+
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -51,6 +52,7 @@ export class PrincipalComponent implements OnInit, OnDestroy {
         this.desafiado(u);
 
       });
+
   }
   open(titulo, contenido, u) {
     this.modalAceptaDesafio = this.modalService.open(ModalComponent);
@@ -103,5 +105,7 @@ export class PrincipalComponent implements OnInit, OnDestroy {
       this.socketAPI.teDesafio$.unsubscribe();*/
 
   }
+
+  
 
 }

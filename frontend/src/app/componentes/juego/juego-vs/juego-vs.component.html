@@ -5,33 +5,56 @@
   <meta charset="utf-8">
   <title>Mecatip</title>
 </head>
-
+<header class="text-center p-3 mb-5">
+    <h1><strong>
+        MecaTIP!
+      </strong>
+    </h1>
+</header>
 <body>
+
+
+
+
   <div class="container-fluid" *ngIf="!(nivel$ | async)">
     <div class="col">
       <div *ngIf="!CREATOR" class="creator">
         ESPERANDO AL CREADOR :O
       </div>
       <div *ngIf="CREATOR" class="creator">
-        <div class="container">
-          <div class="col">
-            <div class="row">
-              <button type="button" name="button" (click)="arrancar()">
-                <h1>GO!</h1>
-              </button>
-            </div>
-
-            <div class="row">
-              <div class="btn-group" role="group">
-                <button type="button" class="btn btn-danger" name="button" (click)="dificultad(true)">
-                  <h1>DIFICIL!</h1>
-                </button>
-                <button type="button" class="btn btn-danger" name="button" (click)="dificultad(false)">
-                  <h1>FACIL!</h1>
-                </button>
-              </div>
-            </div>
+          <div class="text-center p-3 mb-5">
+              <h2><strong>
+                  SELECCIONAR DIFICULTAD:
+                </strong>
+              </h2>
           </div>
+
+        <div class="container">
+            <div class="row text-center">
+                  <div class="col-md-6 mx-auto">
+
+                      <button style="width: 305px;"type="button" class="btn btn-outline-primary" name="button" (click)="dificultad(false)">
+                          <h1>FÁCIL</h1>
+                        </button>
+                        <br>
+                        <br>
+                        <button style="width: 305px;" type="button" class="btn btn-outline-danger" name="button" (click)="dificultad(true)">
+                          <h1>DIFÍCIL</h1>
+                        </button>
+                       
+                          
+                  </div>
+         </div>
+        <br>
+        <div class="row text-center">
+        <div class="col-md-6 mx-auto">
+         <button class="btn-dark btn-outline-success btn-lg" type="button" name="button" (click)="arrancar()">
+            <h1>COMENZAR!</h1>
+          </button>
+        </div>
+        </div>
+
+
         </div>
 
 
@@ -44,56 +67,58 @@
 
   <div class="nivel" *ngIf="!!(nivel$ | async)">
     <div *ngIf="(palabrasXlvl$ | async)">
+     <!-- <div>
+        <div>-->
+            <div class="container text-center">
+
+                <!-- Palabra & Input -->
+                <div class="row">
+                  <div class="col-md-6 mx-auto">
+                      <p class="lead">Escribe la Siguiente Palabra en
+                          <span class="text-success" id="seconds">3</span> Segundos:</p>
+                    <h2 class="display-2 mb-5" id="current-word">{{PALABRA}}</h2>
 
 
-      <div class="presentacion">
-
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <div class="card">
-                <h5 class="card-header">Tiempo</h5>
-                <div class="card-body">
-                  <h5 class="card-title"> {{seg$ | async}}</h5>
-
-
+                    <input type="text" [(ngModel)]="escribiendo" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+  
+        
+                
+                    <h4 class="mt-3" id="message"></h4>
+        
+                    <!-- Tiempo & Puntuaciones -->
+                    <div class="row mt-5">
+                      <div class="col-md-12">
+                        <h3>Tiempo:
+                          <span id="time">{{seg$ | async}} segundos</span>
+                        </h3>
+                   
+                        <h3>Puntuación:
+                          <span id="score">{{puntaje}}</span>
+                        </h3>
+        
+                        <h3>Nivel:
+                            <span id="nivel">{{nivel$ | async}}</span>
+                          </h3>
+        
+                      </div>
+        
+                      
+        
+                    <!-- Instrucciones -->
+                    <div class="row mt-5">
+                      <div class="col-md-12">
+        
+                        <div class="card card-body bg-secondary text-dark">
+                          <h5>Instrucciones</h5>
+                          <p>Escribe cada palabra dada en el campo indicado,
+                            sin errores, en el menor tiempo posible. </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-sm">
-              <div class="card">
-                <h5 class="card-header">Puntaaje</h5>
-                <div class="card-body">
-                  <h5 class="card-title"> {{puntaje}}</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card">
-                <h5 class="card-header">Nivel</h5>
-                <div class="card-body">
-                  <h5 class="card-title"> {{nivel$ | async}}</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <h2>{{PALABRA}}</h2>
-          </div>
-          <div class="row">
-            <div class="input-group input-group-lg">
-              <input type="text" [(ngModel)]="escribiendo" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
 
 
 

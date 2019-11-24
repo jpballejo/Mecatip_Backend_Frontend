@@ -8,23 +8,31 @@
 
 <body>
   <div class="container">
-    <div class="col">
-      <div class="row">
-        <div class="col"> <button type="button" class="btn btn-danger btn-lg btn-block" name="btnSIM" routerLink="/juego/juego">
-            <h1>SIMPLE</h1>
-          </button>
-          <div class="col"> <button class="btn btn-dark btn-lg btn-block" type="button" routerLink="/juego/enespera" name="btnVS">
-              <h1>VS</h1>
-            </button></div>
-        </div>
+   
+        <div class="text-center p-3 mb-5">
+          <h1><strong>
+              SELECCIONAR MODALIDAD DE JUEGO:
+            </strong>
+          </h1>
       </div>
-      <div class="row">
-        <div class="col">
+
+      <div class="row ">      
+          <button type="button" class="btn btn-dark btn-outline-danger btn-lg btn-block " name="btnSIM" routerLink="/juego/juego">
+            <h1>INDIVIDUAL</h1>
+          </button>
+
+         <button class="btn btn-dark btn-outline-danger btn-lg btn-block " type="button" routerLink="/juego/enespera" name="btnVS">
+              <h1>MULTIJUGADOR</h1>
+            </button>     
+      </div>
+
+      <div class="text-center p-3 mb-5">
+        
           <div class="userOnline">
             <table class="table table-dark">
               <thead>
                 <tr>
-                  <th scope="col">Jugadores disponibles</th>
+                  <th scope="col">Jugadores En Línea</th>
                 </tr>
               </thead>
               <tbody>
@@ -34,11 +42,8 @@
               </tbody>
             </table>
           </div>
-        </div>
-        <div class="col">
-          <app-chat></app-chat>
-        </div>
-      </div>
+      
+
     </div>
   </div>
 
@@ -64,5 +69,7 @@
 
 
 </body>
+
+
 
 </html>

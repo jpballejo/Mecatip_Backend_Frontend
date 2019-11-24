@@ -12,7 +12,7 @@ module.exports = (server) => {
   let socketClientesJuego = require('./socket.clientesJuego');
   let socketClienteschat = require('./socket.clienteChat');
   socketClientes.funcionInit();
-  socketSalas.funcionInit();
+  socketSalasJuego.funcionInit();
   socketEnEspera.funcionInit();
   socketEnEsperaChat.funcionInit();
   //socketSJWT(socketIo, jwtSecret);
